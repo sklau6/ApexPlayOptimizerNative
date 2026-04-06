@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="about_app_version">應用程式版本</string>
+    <string name="about_contact_support">聯絡支援</string>
+    <string name="about_data_safety">資料安全</string>
+    <string name="about_data_safety_sub">您的資料 100% 安全</string>
+    <string name="about_privacy_policy">隱私政策</string>
+    <string name="about_rate_app">評價應用程式</string>
+    <string name="ai_boost_cpu">CPU</string>
+    <string name="ai_boost_done">完成</string>
+    <string name="ai_boost_ram_free">可用記憶體</string>
+    <string name="ai_boost_temp">溫度</string>
+    <string name="ai_boost_title">🤖 AI 加速</string>
+    <string name="ai_phase_1">🔍 掃描裝置…</string>
+    <string name="ai_phase_2">🧹 清理快取…</string>
+    <string name="ai_phase_3">⚡ 優化 CPU…</string>
+    <string name="ai_phase_4">📡 調優網路…</string>
+    <string name="ai_phase_5">🎯 校準中…</string>
+    <string name="ai_phase_6">✅ AI 加速完成！</string>
+    <string name="app_name">Apex Play 優化器</string>
+    <string name="badge_guaranteed">品質保證</string>
+    <string name="badge_max_fps">最高幀率</string>
+    <string name="badge_no_heating">不過熱</string>
+    <string name="badge_pro">職業</string>
+    <string name="badge_safe">100% 安全</string>
+    <string name="boost_all_optimal">所有系統運作正常</string>
+    <string name="boost_cleaning_tuning">清理 · 調優</string>
+    <string name="boost_game_ready">遊戲就緒！</string>
+    <string name="boost_one_tap">一鍵優化</string>
+    <string name="boost_optimizing">優化中…</string>
+    <string name="boost_perf_score">效能評分</string>
+    <string name="boost_quick_boost">快速加速</string>
+    <string name="btn_activate">啟用</string>
+    <string name="btn_activate_settings">⚡  啟用設定</string>
+    <string name="btn_activate_zero_lag">⚡ 啟用零延遲</string>
+    <string name="btn_activated">✅  設定已啟用</string>
+    <string name="btn_apply_settings">套用設定</string>
+    <string name="btn_open_gfx">開啟完整畫質工具 ›</string>
+    <string name="btn_optimizing">優化中...</string>
+    <string name="btn_re_optimize">重新優化</string>
+    <string name="btn_settings_activated">✅  設定已啟用</string>
+    <string name="btn_view_presets">檢視職業玩家預設</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"接聽"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"視訊"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"拒接"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"掛斷"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"來電"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"通話中"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"正在過濾來電"</string>
+    <string msgid="406453423630273620" name="close_drawer">"關閉導覽選單"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"關閉功能表"</string>
+    <string name="connection_excellent">極佳</string>
+    <string name="connection_fair">一般</string>
+    <string name="connection_good">良好</string>
+    <string name="connection_poor">差</string>
+    <string name="connection_suffix">連線</string>
+    <string name="dashboard_subtitle">Android 裝置 · %1$d%% CPU</string>
+    <string name="dashboard_title">控制台</string>
+    <string msgid="8038256446254964252" name="default_error_message">"輸入內容無效"</string>
+    <string msgid="6312721426453364202" name="default_popup_window_title">"彈出式視窗"</string>
+    <string name="dropdown_anti_aliasing">抗鋸齒</string>
+    <string name="dropdown_frame_rate">幀率</string>
+    <string name="dropdown_framerate">幀率</string>
+    <string name="dropdown_graphic_style">畫風</string>
+    <string name="dropdown_graphics">畫質</string>
+    <string name="dropdown_graphics_quality">畫質品質</string>
+    <string msgid="1890207353314751437" name="dropdown_menu">"下拉式選單"</string>
+    <string name="dropdown_resolution">解析度</string>
+    <string name="dropdown_shadows">陰影</string>
+    <string name="dropdown_style">風格</string>
+    <string name="feat_ai_boost">AI 加速</string>
+    <string name="feat_ai_boost_desc">智慧 6 階段優化</string>
+    <string name="feat_dashboard">控制台</string>
+    <string name="feat_dashboard_desc">即時系統概覽</string>
+    <string name="feat_gfx_tool">畫質工具</string>
+    <string name="feat_gfx_tool_desc">2K · 144Hz · HDR 解鎖</string>
+    <string name="feat_hud_monitor">HUD 監控</string>
+    <string name="feat_hud_monitor_desc">即時裝置狀態</string>
+    <string name="feat_sensitivity">靈敏度</string>
+    <string name="feat_sensitivity_desc">職業玩家預設</string>
+    <string name="feat_zero_lag">零延遲</string>
+    <string name="feat_zero_lag_desc">3 模式延遲優化器</string>
+    <string name="gfx_page_advanced">進階調整</string>
+    <string name="gfx_page_quick">快速設定</string>
+    <string name="gfx_settings_applied">✅  設定已套用！重啟遊戲以使變更生效。</string>
+    <string name="gfx_subtitle">畫質優化器</string>
+    <string name="gfx_tip_1">降低陰影是提升幀率最有效的方法。</string>
+    <string name="gfx_tip_2">4GB 以下記憶體裝置建議降低解析度。</string>
+    <string name="gfx_tip_3">144 幀需要良好的散熱支援。</string>
+    <string name="gfx_tips_title">⚡  畫質提示</string>
+    <string name="gfx_title">畫質工具</string>
+    <string name="guarantee_144fps">解鎖高達 144 幀</string>
+    <string name="guarantee_account_safe">帳號 100% 安全</string>
+    <string name="guarantee_hdr">低階裝置支援 HDR</string>
+    <string name="guarantee_max_fps">每台裝置最高幀率</string>
+    <string name="guarantee_no_overheat">保證不過熱</string>
+    <string name="guarantee_updates">永久免費更新</string>
+    <string name="home_app_subtitle">優化器專業版</string>
+    <string name="home_app_title">APEX PLAY</string>
+    <string name="hud_cpu_load">CPU 負載</string>
+    <string name="hud_detailed_metrics">📊 詳細指標</string>
+    <string name="hud_latency">延遲</string>
+    <string name="hud_live">即時</string>
+    <string name="hud_memory">記憶體</string>
+    <string name="hud_network_status">🌐 網路狀態</string>
+    <string name="hud_paused">已暫停</string>
+    <string name="hud_performance_tips">⚡ 效能提示</string>
+    <string name="hud_storage_analysis">💾 儲存空間分析</string>
+    <string name="hud_temp">溫度</string>
+    <string name="hud_tip_1">開始高強度遊戲前清理記憶體。</string>
+    <string name="hud_tip_2">保持裝置涼爽 — 溫度超過 45°C 會降低效能。</string>
+    <string name="hud_tip_3">競技遊戲使用 Wi-Fi 獲得最低延遲。</string>
+    <string name="hud_tip_4">長時間遊戲時插上充電器。</string>
+    <string name="hud_title">HUD 監控</string>
+    <string msgid="6827826412747255547" name="in_progress">"處理中"</string>
+    <string msgid="7933458017204019916" name="indeterminate">"部分檢查"</string>
+    <string name="label_ai_boost">AI 加速</string>
+    <string name="label_cpu">CPU</string>
+    <string name="label_download">下載</string>
+    <string name="label_latency">延遲</string>
+    <string name="label_mbps_down">MB/s 下行</string>
+    <string name="label_mbps_up">MB/s 上行</string>
+    <string name="label_monster_mode">怪獸模式</string>
+    <string name="label_monster_on">怪獸模式已開啟</string>
+    <string name="label_ms_ping">MS 延遲</string>
+    <string name="label_optimized">已優化！</string>
+    <string name="label_ping">延遲</string>
+    <string name="label_ping_monitor">延遲監控</string>
+    <string name="label_ram">記憶體</string>
+    <string name="label_score">評分</string>
+    <string name="label_speed">速度</string>
+    <string name="label_storage">儲存空間</string>
+    <string name="label_temp">溫度</string>
+    <string name="label_temperature">溫度</string>
+    <string name="label_upload">上傳</string>
+    <string name="lang_arabic">العربية</string>
+    <string name="lang_chinese">中文（簡體）</string>
+    <string name="lang_chinese_tw">中文（繁體）</string>
+    <string name="lang_english">English</string>
+    <string name="lang_hindi">हिंदी</string>
+    <string name="lang_indonesian">Bahasa Indonesia</string>
+    <string name="lang_portuguese">Português (BR)</string>
+    <string name="language_label">語言</string>
+    <string name="language_select_hint">選擇您偏好的語言</string>
+    <string msgid="2988463736136100848" name="m3c_bottom_sheet_collapse_description">"收合底部功能表"</string>
+    <string msgid="1555567894577437024" name="m3c_bottom_sheet_dismiss_description">"關閉底部功能表"</string>
+    <string msgid="8403354765404029791" name="m3c_bottom_sheet_drag_handle_description">"拖曳控點"</string>
+    <string msgid="6670819569745899763" name="m3c_bottom_sheet_expand_description">"展開底部功能表"</string>
+    <string msgid="3010635850035863127" name="m3c_bottom_sheet_pane_title">"底部功能表"</string>
+    <string msgid="8166741421776570875" name="m3c_date_input_headline">"輸入的日期"</string>
+    <string msgid="229313757840775812" name="m3c_date_input_headline_description">"輸入的日期：%1$s"</string>
+    <string msgid="6116910750161463197" name="m3c_date_input_invalid_for_pattern">"日期格式不符：%1$s"</string>
+    <string msgid="2521768508935305279" name="m3c_date_input_invalid_not_allowed">"不允許的日期：%1$s"</string>
+    <string msgid="7052898923934555305" name="m3c_date_input_invalid_year_range">"日期超出預期的年份範圍：%1$s - %2$s"</string>
+    <string msgid="2895559812010326913" name="m3c_date_input_label">"日期"</string>
+    <string msgid="1237013946323089826" name="m3c_date_input_no_input_description">"無"</string>
+    <string msgid="7306227249789210568" name="m3c_date_input_title">"選取日期"</string>
+    <string msgid="7605002211875882969" name="m3c_date_picker_headline">"所選日期"</string>
+    <string msgid="3664277305226978227" name="m3c_date_picker_headline_description">"目前選項：%1$s"</string>
+    <string msgid="8436650776581492840" name="m3c_date_picker_navigate_to_year_description">"前往 %1$s 年"</string>
+    <string msgid="5811000998184572395" name="m3c_date_picker_no_selection_description">"無"</string>
+    <string msgid="7813882352367152251" name="m3c_date_picker_scroll_to_earlier_years">"捲動即可顯示先前年分"</string>
+    <string msgid="5727367015496556177" name="m3c_date_picker_scroll_to_later_years">"捲動即可顯示之後年分"</string>
+    <string msgid="1804346892470238807" name="m3c_date_picker_switch_to_calendar_mode">"切換至日曆輸入模式"</string>
+    <string msgid="395627960681594326" name="m3c_date_picker_switch_to_day_selection">"滑動即可選取年分，也可輕觸返回選取日期"</string>
+    <string msgid="2219746470065162704" name="m3c_date_picker_switch_to_input_mode">"切換至文字輸入模式"</string>
+    <string msgid="7142101321095356500" name="m3c_date_picker_switch_to_next_month">"改成下個月"</string>
+    <string msgid="228438865139394590" name="m3c_date_picker_switch_to_previous_month">"改成上個月"</string>
+    <string msgid="791651718641787594" name="m3c_date_picker_switch_to_year_selection">"改為選取年份"</string>
+    <string msgid="7430790972741451689" name="m3c_date_picker_title">"選取日期"</string>
+    <string msgid="3199387177749801575" name="m3c_date_picker_today_description">"今天"</string>
+    <string msgid="2068382232816991922" name="m3c_date_picker_year_picker_pane_title">"顯示年份挑選器"</string>
+    <string msgid="3190049423327661366" name="m3c_date_range_input_invalid_range_input">"輸入的日期範圍無效"</string>
+    <string msgid="3148384720560189467" name="m3c_date_range_input_title">"輸入日期"</string>
+    <string msgid="2138321128465719402" name="m3c_date_range_picker_day_in_range">"在有效範圍內"</string>
+    <string msgid="4947636797751277713" name="m3c_date_range_picker_end_headline">"結束日期"</string>
+    <string msgid="602077859540990149" name="m3c_date_range_picker_scroll_to_next_month">"捲動即可顯示下一個月"</string>
+    <string msgid="4592174524846109496" name="m3c_date_range_picker_scroll_to_previous_month">"捲動即可顯示上一個月"</string>
+    <string msgid="4665981448952749820" name="m3c_date_range_picker_start_headline">"開始日期"</string>
+    <string msgid="3134165431120340385" name="m3c_date_range_picker_title">"選取日期"</string>
+    <string msgid="7617233117134790350" name="m3c_dialog">"對話方塊"</string>
+    <string msgid="3177828188723359358" name="m3c_dropdown_menu_collapsed">"已收合"</string>
+    <string msgid="2360841780724299882" name="m3c_dropdown_menu_expanded">"已展開"</string>
+    <string msgid="6152806324422087846" name="m3c_search_bar_search">"搜尋"</string>
+    <string msgid="6152755701819882931" name="m3c_snackbar_dismiss">"關閉"</string>
+    <string msgid="7655536806087401899" name="m3c_suggestions_available">"建議如下"</string>
+    <string msgid="2786685010796619560" name="m3c_time_picker_am">"上午"</string>
+    <string msgid="2349193472625211372" name="m3c_time_picker_hour">"小時"</string>
+    <string msgid="9179527532316922345" name="m3c_time_picker_hour_24h_suffix">"%1$d 時"</string>
+    <string msgid="8876759303332837035" name="m3c_time_picker_hour_selection">"選取小時"</string>
+    <string msgid="3458167507790628988" name="m3c_time_picker_hour_suffix">"%1$d 點"</string>
+    <string msgid="6973808109666874069" name="m3c_time_picker_hour_text_field">"小時"</string>
+    <string msgid="4313071914266462005" name="m3c_time_picker_minute">"分鐘"</string>
+    <string msgid="4699133535056739733" name="m3c_time_picker_minute_selection">"選取分鐘數"</string>
+    <string msgid="5064177921781937179" name="m3c_time_picker_minute_suffix">"%1$d 分鐘"</string>
+    <string msgid="7661234488295443182" name="m3c_time_picker_minute_text_field">"分鐘"</string>
+    <string msgid="5865171949528594571" name="m3c_time_picker_period_toggle_description">"選取上午或下午"</string>
+    <string msgid="6616362054113087709" name="m3c_time_picker_pm">"下午"</string>
+    <string msgid="1805687647081129904" name="m3c_tooltip_long_press_label">"顯示工具提示"</string>
+    <string msgid="5460405025248574620" name="m3c_tooltip_pane_description">"工具提示"</string>
+    <string name="metric_cpu_load">CPU 負載</string>
+    <string name="metric_memory_usage">記憶體使用率</string>
+    <string name="metric_network_ping">網路延遲</string>
+    <string name="metric_storage">儲存空間</string>
+    <string name="metric_temperature">溫度</string>
+    <string name="mode_balanced">平衡</string>
+    <string name="mode_balanced_desc">效能與電量之間的最佳平衡。</string>
+    <string name="mode_balanced_f1">適度 CPU 加速</string>
+    <string name="mode_balanced_f2">選擇性背景關閉</string>
+    <string name="mode_balanced_f3">標準快取清理</string>
+    <string name="mode_balanced_f4">省電友善</string>
+    <string name="mode_extreme">極限</string>
+    <string name="mode_extreme_desc">突破裝置所有限制，適合基準測試。</string>
+    <string name="mode_extreme_f1">超頻 CPU</string>
+    <string name="mode_extreme_f2">激進記憶體釋放</string>
+    <string name="mode_extreme_f3">GPU 超頻</string>
+    <string name="mode_extreme_f4">完全散熱繞過</string>
+    <string name="mode_extreme_f5">最高解析度</string>
+    <string name="mode_gamer">玩家</string>
+    <string name="mode_performance">效能</string>
+    <string name="mode_performance_desc">最大遊戲效能，推薦競技使用。</string>
+    <string name="mode_performance_f1">完全 CPU 加速</string>
+    <string name="mode_performance_f2">關閉所有背景應用程式</string>
+    <string name="mode_performance_f3">完整快取清理</string>
+    <string name="mode_performance_f4">解鎖 HDR</string>
+    <string name="mode_performance_f5">極限幀率模式</string>
+    <string name="mode_power_save">省電</string>
+    <string msgid="542007171693138492" name="navigation_menu">"導覽選單"</string>
+    <string msgid="6610465462668679431" name="not_selected">"未選取"</string>
+    <string msgid="875452955155264703" name="off">"已關閉"</string>
+    <string msgid="8655164131929253426" name="on">"已開啟"</string>
+    <string name="optimization_complete">✅ 優化完成</string>
+    <string name="optimizing_progress">⚡ 優化中...</string>
+    <string name="preset_balanced">均衡</string>
+    <string name="preset_balanced_sub">最佳組合</string>
+    <string name="preset_smooth">流暢</string>
+    <string name="preset_smooth_sub">最高幀率</string>
+    <string name="preset_ultra">極致</string>
+    <string name="preset_ultra_sub">最高畫質</string>
+    <string name="pro_tip_body">遊戲前關閉所有背景應用程式，每次遊戲內畫質變更後重新套用 GFX 設定，以獲得最佳效能。</string>
+    <string name="pro_tip_header">💡  專業提示</string>
+    <string msgid="5941395253238309765" name="range_end">"範圍終點"</string>
+    <string msgid="7097486360902471446" name="range_start">"範圍起點"</string>
+    <string name="result_cpu_optimized">CPU 已優化</string>
+    <string name="result_done">完成</string>
+    <string name="result_fps_mode">幀率模式</string>
+    <string name="result_managed">已管理</string>
+    <string name="result_ram_freed">記憶體已釋放</string>
+    <string name="result_thermal">熱管理</string>
+    <string name="safety_text">本應用程式不收集個人資料或修改遊戲檔案。您可以自由安全地使用本應用程式，我們與騰訊無關聯。</string>
+    <string name="safety_title">🛡 您的帳號 100% 安全</string>
+    <string name="scope_2x">2 倍鏡</string>
+    <string name="scope_3x">3 倍鏡</string>
+    <string name="scope_4x_acog">4 倍 ACOG</string>
+    <string name="scope_6x">6 倍鏡</string>
+    <string name="scope_8x">8 倍鏡</string>
+    <string name="scope_general">通用</string>
+    <string name="scope_red_dot">紅點</string>
+    <string name="section_about">ℹ 關於</string>
+    <string name="section_current_status">目前裝置狀態</string>
+    <string name="section_game_boost">🚀 遊戲加速</string>
+    <string name="section_hud_display">📊 HUD 與顯示</string>
+    <string name="section_lag_settings">延遲設定</string>
+    <string name="section_language">🌍 語言</string>
+    <string name="section_network">🌐 網路</string>
+    <string name="section_notifications">🔔 通知</string>
+    <string name="section_power_thermal">🔋 電量與溫度</string>
+    <string name="section_pro_tips_lag">減少延遲的專業提示</string>
+    <string name="section_quick_access">快速存取</string>
+    <string name="section_quick_presets">快速預設</string>
+    <string name="section_why_apex">為何選擇 APEX PLAY</string>
+    <string name="select_boost_mode">選擇加速模式</string>
+    <string msgid="6043586758067023" name="selected">"已選取"</string>
+    <string name="sens_tip_1">比賽前使用快速加速清理記憶體。</string>
+    <string name="sens_tip_2">切換至 5GHz Wi-Fi 或有線網路獲得最佳回應。</string>
+    <string name="sens_tip_3">插上充電器 — 省電模式會限制 CPU 效能。</string>
+    <string name="sens_tip_4">遊戲期間關閉背景同步和雲端備份。</string>
+    <string name="sensitivity_select_preset">選擇職業玩家預設</string>
+    <string name="sensitivity_subtitle">職業玩家預設</string>
+    <string name="sensitivity_title">靈敏度</string>
+    <string name="settings_premium_badge">⭐ 進階版</string>
+    <string name="settings_premium_desc">進階版 · 無限加速</string>
+    <string name="settings_profile_name">APEX PLAY 優化器</string>
+    <string name="settings_title">設定</string>
+    <string name="slider_lod_distance">細節距離</string>
+    <string name="slider_particle_fx">粒子特效</string>
+    <string name="slider_post_processing">後處理</string>
+    <string name="slider_render_scale">渲染比例</string>
+    <string name="slider_shadow_detail">陰影細節</string>
+    <string name="slider_texture_quality">貼圖品質</string>
+    <string name="splash_app_subtitle">優化器專業版</string>
+    <string name="splash_app_title">APEX PLAY</string>
+    <string name="splash_phase_1">正在初始化引擎…</string>
+    <string name="splash_phase_2">正在載入優化模組…</string>
+    <string name="splash_phase_3">正在校準裝置設定…</string>
+    <string name="splash_phase_4">正在套用效能設定…</string>
+    <string name="splash_phase_5">準備就緒，開始加速！</string>
+    <string name="status_all_optimal">所有系統狀態最佳</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="status_cpu">CPU</string>
+    <string name="status_critical_boost">嚴重 — 立即加速</string>
+    <string name="status_needs_optimization">需要優化</string>
+    <string name="status_ping">延遲</string>
+    <string name="status_ram">記憶體</string>
+    <string name="status_temp_short">溫度</string>
+    <string name="storage_gb_free">%1$.2f GB 可用</string>
+    <string name="storage_gb_total">%1$d GB 總計</string>
+    <string name="storage_gb_used">%1$.2f GB 已用</string>
+    <string msgid="2561197295334830845" name="switch_role">"切換鈕"</string>
+    <string msgid="1672349317127674378" name="tab">"Tab 鍵"</string>
+    <string name="tab_gfx_tool">畫質工具</string>
+    <string name="tab_sensitivity">靈敏度</string>
+    <string msgid="5946805113151406391" name="template_percent">"百分之 <ns1:g id="PERCENTAGE">%1$d</ns1:g>。"</string>
+    <string name="toggle_auto_boost">自動加速</string>
+    <string name="toggle_auto_boost_sub">偵測到遊戲時自動加速</string>
+    <string name="toggle_auto_calibrate">啟動時自動校準</string>
+    <string name="toggle_auto_calibrate_sub">遊戲開啟時自動套用設定</string>
+    <string name="toggle_auto_kill">自動關閉背景應用程式</string>
+    <string name="toggle_auto_kill_sub">關閉未使用的應用程式以釋放記憶體</string>
+    <string name="toggle_battery_mode">省電模式</string>
+    <string name="toggle_battery_mode_sub">限制加速強度以節省電量</string>
+    <string name="toggle_cpu_optimize">CPU 優化</string>
+    <string name="toggle_cpu_optimize_sub">為遊戲應用程式套用 CPU 排程設定</string>
+    <string name="toggle_dark_theme">深色主題</string>
+    <string name="toggle_dark_theme_sub">深色模式介面（推薦）</string>
+    <string name="toggle_fingerprint">指紋精準模式</string>
+    <string name="toggle_fingerprint_sub">用於手指追蹤的微調</string>
+    <string name="toggle_fps_cap">幀率上限</string>
+    <string name="toggle_fps_cap_sub">限制最高幀率</string>
+    <string name="toggle_gaming_mode">自動遊戲模式</string>
+    <string name="toggle_gaming_mode_sub">遊戲啟動時切換至遊戲模式</string>
+    <string name="toggle_haptic">觸覺回饋</string>
+    <string name="toggle_haptic_sub">更改靈敏度時震動</string>
+    <string name="toggle_hud_overlay">遊戲內 HUD 疊加層</string>
+    <string name="toggle_hud_overlay_sub">遊戲過程中顯示狀態疊加層</string>
+    <string name="toggle_lag_reduction">延遲降低模式</string>
+    <string name="toggle_lag_reduction_sub">減少輸入延遲，使遊戲更流暢</string>
+    <string name="toggle_network_optimize">網路優化</string>
+    <string name="toggle_network_optimize_sub">優化網路以降低遊戲延遲</string>
+    <string name="toggle_notifications">通知</string>
+    <string name="toggle_notifications_sub">加速啟用時通知</string>
+    <string name="toggle_thermal_protect">熱保護</string>
+    <string name="toggle_thermal_protect_sub">裝置過熱時降低效能</string>
+    <string name="toggle_vibration">震動回饋</string>
+    <string name="toggle_vibration_sub">加速操作時觸覺回饋</string>
+    <string msgid="3765533235322692011" name="tooltip_description">"工具提示"</string>
+    <string msgid="3124740595719787496" name="tooltip_label">"顯示工具提示"</string>
+    <string name="value_active">活躍</string>
+    <string name="zero_lag_hint">將關閉背景應用程式並優化 %1$s 模式</string>
+    <string name="zero_lag_subtitle">效能優化器</string>
+    <string name="zero_lag_title">零延遲模式</string>
+</resources>

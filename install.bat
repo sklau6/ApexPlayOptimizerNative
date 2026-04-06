@@ -1,0 +1,30 @@
+@echo off
+npm install react
+npm install react-dom
+npm install next
+npm install typescript
+npm install @types/node
+npm install @types/react
+npm install @types/react-dom
+npm install tailwindcss
+npm install postcss
+npm install autoprefixer
+npm install clsx
+npm install tailwind-merge
+npm install class-variance-authority
+npm install lucide-react
+npm install sonner
+npm install xlsx
+npm install @tanstack/react-query
+npm install react-hook-form
+npm install @hookform/resolvers
+npm install zod
+npm install @radix-ui/react-slot
+npm install @radix-ui/react-label
+npm install @radix-ui/react-tabs
+npm install @radix-ui/react-progress
+npm install @radix-ui/react-separator
+npm install @radix-ui/react-scroll-area
+npm install eslint
+npm install eslint-config-next
+echo Done!
