@@ -62,7 +62,7 @@ fun HUDMonitorScreen(nav: NavController) {
             ) { Text(if (isLive) "⏸" else "▶", fontSize = 14.sp) }
         }
 
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // ── Circular gauge panel (TurboSpeed style) ─────────────────────
             Box(

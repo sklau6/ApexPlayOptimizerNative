@@ -291,4 +291,171 @@
     <string name="lang_arabic">العربية</string>
     <string name="lang_indonesian">Bahasa Indonesia</string>
     <string name="lang_portuguese">Português (BR)</string>
+
+    <!-- Dashboard monitor tab labels -->
+    <string name="tab_overview">OVERVIEW</string>
+    <string name="tab_hardware">HARDWARE</string>
+    <string name="tab_battery">BATTERY</string>
+
+    <!-- Dashboard card headers -->
+    <string name="card_memory">Memory</string>
+    <string name="card_storage">Storage</string>
+    <string name="card_battery">Battery</string>
+    <string name="card_network">Network</string>
+    <string name="card_display">Display</string>
+    <string name="card_apps">Apps</string>
+    <string name="card_device">Device</string>
+    <string name="card_os">Operating System</string>
+    <string name="card_processor">Processor</string>
+    <string name="card_cpu_freqs">CPU Frequencies</string>
+    <string name="card_status">Status</string>
+    <string name="card_electrical">Electrical</string>
+    <string name="card_battery_info">Info</string>
+
+    <!-- Dashboard Overview content -->
+    <string name="label_mhz_peak">%1$d MHz peak</string>
+    <string name="label_mb_free">%1$d MB free / %2$d GB</string>
+    <string name="label_charging">Charging</string>
+    <string name="label_discharging">Discharging</string>
+    <string name="label_wifi_speed">Wi-Fi</string>
+    <string name="label_signal">Signal</string>
+    <string name="label_ip">IP</string>
+    <string name="label_ping_short">Ping</string>
+    <string name="label_user_apps">%1$d user</string>
+    <string name="label_system_apps">%1$d system</string>
+
+    <!-- Dashboard Hardware KV keys -->
+    <string name="key_manufacturer">Manufacturer</string>
+    <string name="key_model">Model</string>
+    <string name="key_board">Board</string>
+    <string name="key_android">Android</string>
+    <string name="key_codename">Codename</string>
+    <string name="key_security_patch">Security patch</string>
+    <string name="key_cores">Cores</string>
+    <string name="key_architecture">Architecture</string>
+    <string name="key_abi">ABI</string>
+    <string name="key_core_n">Core %1$d</string>
+
+    <!-- Dashboard Battery electrical stats -->
+    <string name="elec_temp">Temp</string>
+    <string name="elec_voltage">Voltage</string>
+    <string name="elec_power">Power</string>
+    <string name="key_current">Current</string>
+    <string name="key_technology">Technology</string>
+    <string name="key_health">Health</string>
+    <string name="key_design_capacity">Design capacity</string>
+
+    <!-- Premium Screen -->
+    <string name="premium_title">⭐  APEX PREMIUM</string>
+    <string name="premium_subtitle">Unlock your device\'s true potential</string>
+    <string name="premium_current_plan">Current plan: %1$s</string>
+    <string name="premium_upgrade">Upgrade ›</string>
+    <string name="premium_active">✅  Active</string>
+    <string name="billing_monthly">Monthly</string>
+    <string name="billing_yearly">Yearly  💰 Save 33%%</string>
+    <string name="premium_always_free">Always free</string>
+    <string name="plan_plus_yearly_note">billed $39.99/yr · save 33%%</string>
+    <string name="plan_pro_yearly_note">billed $239.99/yr · save 33%%</string>
+    <string name="premium_badge_popular">POPULAR</string>
+    <string name="badge_active">ACTIVE</string>
+    <string name="premium_web_billing_title">Save up to 25%% with Web Billing</string>
+    <string name="premium_web_billing_desc">Subscribe via our website to avoid the 15–30%% app store commission — same features, better price. Your subscription syncs automatically to the app.</string>
+    <string name="premium_web_billing_link">apexplayoptimizer.com/subscribe  ›</string>
+    <string name="premium_restore">Restore Purchases</string>
+    <string name="premium_auto_renew">Subscriptions auto-renew unless cancelled 24h before renewal.\nCancel anytime in your account settings.</string>
+    <string name="premium_terms">Terms of Service</string>
+    <string name="premium_privacy">Privacy Policy</string>
+    <string name="premium_cta_get_plus">⚡  Get Plus</string>
+    <string name="premium_cta_website">🌐  Subscribe via Website</string>
+    <string name="premium_cta_website_sub">Save 25%% — no app store fees</string>
+    <string name="premium_cta_current">✅  Current Plan</string>
+    <!-- Plan features: Free -->
+    <string name="plan_free_f1">3 Boost Credits per day</string>
+    <string name="plan_free_f2">Basic GFX presets</string>
+    <string name="plan_free_f3">HUD Monitor</string>
+    <string name="plan_free_f4">Zero-lag modes</string>
+    <string name="plan_free_f5">Ad-supported</string>
+    <string name="plan_free_f6">Unlimited boosts</string>
+    <string name="plan_free_f7">No ads</string>
+    <string name="plan_free_f8">AI performance coaching</string>
+    <string name="plan_free_f9">Priority gaming servers</string>
+    <!-- Plan features: Plus -->
+    <string name="plan_plus_f1">Unlimited Boost Credits</string>
+    <string name="plan_plus_f2">No ads</string>
+    <string name="plan_plus_f3">All GFX presets unlocked</string>
+    <string name="plan_plus_f4">HUD Monitor</string>
+    <string name="plan_plus_f5">All zero-lag modes</string>
+    <string name="plan_plus_f6">100 Speed Tokens/month</string>
+    <string name="plan_plus_f7">AI performance coaching</string>
+    <string name="plan_plus_f8">Priority gaming servers</string>
+    <string name="plan_plus_f9">Exclusive pro presets</string>
+    <!-- Plan features: Pro -->
+    <string name="plan_pro_f1">Everything in Plus</string>
+    <string name="plan_pro_f2">AI performance coaching</string>
+    <string name="plan_pro_f3">Priority gaming servers</string>
+    <string name="plan_pro_f4">Exclusive pro GFX presets</string>
+    <string name="plan_pro_f5">Dedicated priority support</string>
+    <string name="plan_pro_f6">Early access to new features</string>
+    <string name="plan_pro_f7">Team sharing — up to 5 seats</string>
+    <string name="plan_pro_f8">Monthly device performance report</string>
+
+    <!-- Settings Screen subscription section -->
+    <string name="settings_subscription_section">💳  Subscription</string>
+    <string name="settings_current_plan_label">⭐ Current Plan</string>
+    <string name="settings_upgrade_cta">Upgrade ›</string>
+    <string name="settings_manage_cta">Manage ›</string>
+    <string name="settings_store_title">Store &amp; Credits</string>
+    <string name="settings_credits_tokens">⚡ %1$d Boosts  •  🌐 %2$d Tokens</string>
+    <string name="settings_shop_cta">Shop ›</string>
+
+    <!-- Home Screen rewarded ad / partner strip -->
+    <string name="home_go_pro">⭐ GO PRO</string>
+    <string name="boost_result_freed">%1$d MB freed  •  %2$d apps cleared</string>
+    <string name="home_watch_ad">Watch ad → Get 3 free boosts</string>
+    <string name="home_watch_cta">Watch ▶</string>
+    <string name="home_credits_remaining">⚡ %1$d credits remaining</string>
+    <string name="partner_label">FEATURED PARTNER</string>
+    <string name="partner_name">ProGear • Elite Gaming Peripherals</string>
+    <string name="partner_discount">15%% OFF</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">HOME</string>
+    <string name="nav_dash">DASH</string>
+    <string name="nav_store">STORE</string>
+    <string name="nav_sens">SENS</string>
+    <string name="nav_more">MORE</string>
+
+    <!-- Store Screen -->
+    <string name="store_title">🛍️  STORE</string>
+    <string name="store_subtitle">Credits · Tokens · Partner Deals</string>
+    <string name="store_purchase_success">%1$s added to your account!</string>
+    <string name="store_section_earn">🎥  Earn Free Credits</string>
+    <string name="store_ad_title">Watch a short ad</string>
+    <string name="store_ad_desc">Get +3 Boost Credits — free, every day</string>
+    <string name="store_ad_remaining">%1$d/%2$d remaining today</string>
+    <string name="store_ad_watch_btn">Watch</string>
+    <string name="store_section_credits">⚡  Boost Credits</string>
+    <string name="store_unlimited_boosts">✅  You have unlimited boosts with your %1$s plan!</string>
+    <string name="store_section_tokens">🌐  Speed Tokens</string>
+    <string name="store_tokens_desc">Use Speed Tokens to run network optimization passes for the lowest ping.</string>
+    <string name="store_section_bundles">🎮  Bundle Deals</string>
+    <string name="store_go_premium_title">⭐  Go Premium</string>
+    <string name="store_go_premium_desc">Unlimited boosts · No ads · AI coaching</string>
+    <string name="store_view_plans">View Plans ›</string>
+    <string name="store_section_partners">🤝  Partner Deals</string>
+    <string name="store_partners_desc">Exclusive deals from brands trusted by pro gamers. These are curated sponsorships — never random ads.</string>
+    <string name="store_buy_btn">Buy</string>
+    <string name="store_total">Total</string>
+    <string name="store_payment_secure">Payment processed securely via Google Play Billing</string>
+    <string name="store_cancel">Cancel</string>
+    <string name="store_buy_price">Buy  %1$s</string>
+
+    <!-- Rewarded Ad Dialog -->
+    <string name="ad_loading">Loading ad…</string>
+    <string name="ad_watch_desc">Watch a short ad to earn +%1$d Boost Credits</string>
+    <string name="ad_reward_title">Reward Unlocked!</string>
+    <string name="ad_reward_thanks">Thank you for supporting Apex Play</string>
+    <string name="ad_credits_added">+%1$d Boost Credits added</string>
+    <string name="ad_tokens_added">+%1$d Speed Tokens added</string>
+    <string name="ad_use_boosts">⚡  Use My Boosts Now</string>
 </resources>

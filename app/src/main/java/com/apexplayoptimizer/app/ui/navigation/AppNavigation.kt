@@ -10,9 +10,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.apexplayoptimizer.app.R
+import androidx.annotation.StringRes
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,19 +33,21 @@ sealed class Screen(val route: String) {
     object Settings    : Screen("settings")
     object HUDMonitor  : Screen("hud_monitor")
     object ZeroLag     : Screen("zero_lag")
+    object Premium     : Screen("premium")
+    object Store       : Screen("store")
 }
 
-private data class BottomNavItem(val screen: Screen, val icon: String, val label: String)
+private data class BottomNavItem(val screen: Screen, val icon: String, val labelRes: Int)
 
-private val bottomItems = listOf(
-    BottomNavItem(Screen.Home,        "🏠", "HOME"),
-    BottomNavItem(Screen.Dashboard,   "📊", "DASH"),
-    BottomNavItem(Screen.GFXTool,     "🖥", "GFX"),
-    BottomNavItem(Screen.Sensitivity, "🎯", "SENS"),
-    BottomNavItem(Screen.Settings,    "⚙", "MORE"),
+private val bottomItemDefs = listOf(
+    BottomNavItem(Screen.Home,        "🏠", R.string.nav_home),
+    BottomNavItem(Screen.Dashboard,   "📊", R.string.nav_dash),
+    BottomNavItem(Screen.Store,       "🛍️", R.string.nav_store),
+    BottomNavItem(Screen.Sensitivity, "🎯", R.string.nav_sens),
+    BottomNavItem(Screen.Settings,    "⚙️",  R.string.nav_more),
 )
 
-private val bottomRoutes = bottomItems.map { it.screen.route }
+private val bottomRoutes = bottomItemDefs.map { it.screen.route }
 private val noBarRoutes  = setOf(Screen.Splash.route)
 
 @Composable
@@ -61,6 +66,8 @@ fun AppNavigation() {
             composable(Screen.Settings.route)    { SettingsScreen(nav) }
             composable(Screen.HUDMonitor.route)  { HUDMonitorScreen(nav) }
             composable(Screen.ZeroLag.route)     { ZeroLagScreen(nav) }
+            composable(Screen.Premium.route)     { PremiumScreen(nav) }
+            composable(Screen.Store.route)       { StoreScreen(nav) }
         }
         if (current !in noBarRoutes) {
             BottomBar(current, nav, Modifier.align(Alignment.BottomCenter))
@@ -85,7 +92,7 @@ private fun BottomBar(current: String?, nav: NavController, modifier: Modifier =
                 .padding(vertical = 6.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            bottomItems.forEach { item ->
+            bottomItemDefs.forEach { item ->
                 val selected = current == item.screen.route
                 Column(
                     modifier = Modifier
@@ -105,7 +112,7 @@ private fun BottomBar(current: String?, nav: NavController, modifier: Modifier =
                     Text(item.icon, fontSize = if (selected) 21.sp else 19.sp)
                     Spacer(Modifier.height(2.dp))
                     Text(
-                        item.label,
+                        stringResource(item.labelRes),
                         fontSize   = 9.sp,
                         fontWeight = if (selected) FontWeight.Black else FontWeight.Medium,
                         color      = if (selected) Primary else TextMuted,

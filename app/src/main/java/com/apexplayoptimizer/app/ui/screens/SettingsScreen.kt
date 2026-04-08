@@ -20,6 +20,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.LocaleHelper
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.MonetizationManager
+import com.apexplayoptimizer.app.data.SettingsPrefs
+import com.apexplayoptimizer.app.data.UserTier
+import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
 
 private data class SettingState(
@@ -51,10 +55,36 @@ private val LANG_OPTIONS = listOf(
 
 @Composable
 fun SettingsScreen(nav: NavController) {
-    var s by remember { mutableStateOf(SettingState()) }
     val context = LocalContext.current
+    var s by remember {
+        mutableStateOf(SettingState(
+            autoBoost       = SettingsPrefs.getBoolean(context, "autoBoost",       true),
+            gamingMode      = SettingsPrefs.getBoolean(context, "gamingMode",      true),
+            hudOverlay      = SettingsPrefs.getBoolean(context, "hudOverlay",      false),
+            notifications   = SettingsPrefs.getBoolean(context, "notifications",   true),
+            vibration       = SettingsPrefs.getBoolean(context, "vibration",       true),
+            darkTheme       = SettingsPrefs.getBoolean(context, "darkTheme",       true),
+            autoKillApps    = SettingsPrefs.getBoolean(context, "autoKillApps",    true),
+            cpuOptimize     = SettingsPrefs.getBoolean(context, "cpuOptimize",     true),
+            networkOptimize = SettingsPrefs.getBoolean(context, "networkOptimize", false),
+            thermalProtect  = SettingsPrefs.getBoolean(context, "thermalProtect",  true),
+            batteryMode     = SettingsPrefs.getBoolean(context, "batteryMode",     false),
+            fpsCap          = SettingsPrefs.getBoolean(context, "fpsCap",          false),
+        ))
+    }
+    LaunchedEffect(s) {
+        SettingsPrefs.saveAll(
+            context,
+            s.autoBoost, s.gamingMode, s.hudOverlay, s.notifications,
+            s.vibration, s.darkTheme, s.autoKillApps, s.cpuOptimize,
+            s.networkOptimize, s.thermalProtect, s.batteryMode, s.fpsCap,
+        )
+    }
     val currentLang = remember { LocaleHelper.getSavedLanguage(context) }
     var selectedLang by remember { mutableStateOf(currentLang) }
+    val tier    = remember { MonetizationManager.getTier(context) }
+    val credits = remember { MonetizationManager.getCredits(context) }
+    val tokens  = remember { MonetizationManager.getTokens(context) }
 
     Column(Modifier.fillMaxSize().background(Background)) {
         // Header
@@ -71,7 +101,7 @@ fun SettingsScreen(nav: NavController) {
             Box(Modifier.size(36.dp))
         }
 
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // Profile banner
             Box(
@@ -94,6 +124,49 @@ fun SettingsScreen(nav: NavController) {
                                 .padding(horizontal = 8.dp, vertical = 3.dp)
                         ) { Text(stringResource(R.string.settings_premium_badge), fontSize = 10.sp, fontWeight = FontWeight.ExtraBold, color = Yellow, letterSpacing = 0.5.sp) }
                     }
+                }
+            }
+
+            // ── Subscription & Store ──────────────────────────────────────────
+            SettingsSectionTitle(stringResource(R.string.settings_subscription_section))
+            SettingsGroup {
+                // Current plan row
+                Row(
+                    Modifier.fillMaxWidth().clickable { nav.navigate(Screen.Premium.route) }
+                        .padding(horizontal = 14.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        val dot = when (tier) { UserTier.PRO -> Purple; UserTier.PLUS -> Primary; else -> TextMuted }
+                        Box(Modifier.size(8.dp).clip(RoundedCornerShape(4.dp)).background(dot))
+                        Column {
+                            Text(stringResource(R.string.settings_current_plan_label), fontSize = 11.sp, color = TextMuted, fontWeight = FontWeight.SemiBold)
+                            Text(tier.displayName, fontSize = 14.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
+                        }
+                    }
+                    Text(if (tier == UserTier.FREE) stringResource(R.string.settings_upgrade_cta) else stringResource(R.string.settings_manage_cta),
+                        fontSize = 12.sp,
+                        color = if (tier == UserTier.FREE) Purple else Primary,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                SettingsDivider()
+                // Credits & tokens row
+                Row(
+                    Modifier.fillMaxWidth().clickable { nav.navigate(Screen.Store.route) }
+                        .padding(horizontal = 14.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Text("🛒", fontSize = 16.sp)
+                        Column {
+                            Text(stringResource(R.string.settings_store_title), fontSize = 11.sp, color = TextMuted, fontWeight = FontWeight.SemiBold)
+                            Text(stringResource(R.string.settings_credits_tokens, credits, tokens), fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
+                        }
+                    }
+                    Text(stringResource(R.string.settings_shop_cta), fontSize = 12.sp, color = Primary, fontWeight = FontWeight.Bold)
                 }
             }
 

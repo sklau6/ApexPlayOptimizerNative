@@ -14,6 +14,7 @@ object LocaleHelper {
     val SUPPORTED_LANGUAGES = listOf(
         Language("en",    android.R.string.cancel),
         Language("zh",    android.R.string.cancel),
+        Language("zh-TW", android.R.string.cancel),
         Language("hi",    android.R.string.cancel),
         Language("ar",    android.R.string.cancel),
         Language("in",    android.R.string.cancel),
@@ -38,9 +39,10 @@ object LocaleHelper {
 
     private fun applyLocale(context: Context, language: String): Context {
         val locale = when (language) {
-            "zh" -> Locale.SIMPLIFIED_CHINESE
-            "pt" -> Locale("pt", "BR")
-            else -> Locale(language)
+            "zh"    -> Locale.SIMPLIFIED_CHINESE
+            "zh-TW" -> Locale("zh", "TW")
+            "pt"    -> Locale("pt", "BR")
+            else    -> Locale(language)
         }
         Locale.setDefault(locale)
         val config = Configuration(context.resources.configuration)

@@ -49,11 +49,30 @@
     <string msgid="59049573811482460" name="call_notification_screening_text">"Menyaring panggilan masuk"</string>
     <string msgid="406453423630273620" name="close_drawer">"Tutup menu navigasi"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Tutup sheet"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktifkan</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s tidak akan berfungsi jika layanan Google Play tidak diaktifkan.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktifkan layanan Google Play</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Instal</string>
+    <string name="common_google_play_services_install_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak ada di perangkat Anda.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Dapatkan layanan Google Play</string>
+    <string name="common_google_play_services_notification_channel_name">Ketersediaan layanan Google Play</string>
+    <string name="common_google_play_services_notification_ticker">Kesalahan layanan Google Play</string>
+    <string name="common_google_play_services_unknown_issue">%1$s mengalami masalah dengan layanan Google Play. Coba lagi.</string>
+    <string name="common_google_play_services_unsupported_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak didukung oleh perangkat Anda.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">%1$s tidak akan berjalan jika layanan Google Play tidak diperbarui.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Perbarui layanan Google Play</string>
+    <string name="common_google_play_services_updating_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang saat ini sedang diperbarui.</string>
+    <string name="common_google_play_services_wear_update_text">Perlu versi baru layanan Google Play. Akan segera memperbarui sendiri.</string>
+    <string name="common_open_on_phone">Buka di ponsel</string>
+    <string name="common_signin_button_text">Login</string>
+    <string name="common_signin_button_text_long">Login dengan Google</string>
     <string name="connection_excellent">SANGAT BAIK</string>
     <string name="connection_fair">CUKUP</string>
     <string name="connection_good">BAIK</string>
     <string name="connection_poor">BURUK</string>
     <string name="connection_suffix"> KONEKSI</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"Link disalin ke papan klip"</string>
     <string name="dashboard_subtitle">Perangkat Android · %1$d%% CPU</string>
     <string name="dashboard_title">DASBOR</string>
     <string msgid="8038256446254964252" name="default_error_message">"Input tidak valid"</string>
@@ -68,6 +87,9 @@
     <string name="dropdown_resolution">RESOLUSI</string>
     <string name="dropdown_shadows">BAYANGAN</string>
     <string name="dropdown_style">GAYA</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Salin link"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Buka di browser"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Bagikan link"</string>
     <string name="feat_ai_boost">AI BOOST</string>
     <string name="feat_ai_boost_desc">Optimasi cerdas 6 fase</string>
     <string name="feat_dashboard">DASBOR</string>
@@ -225,9 +247,23 @@
     <string name="mode_performance_f4">Buka kunci HDR</string>
     <string name="mode_performance_f5">Mode FPS ekstrem</string>
     <string name="mode_power_save">HEMAT</string>
+    <string name="native_body">Isi</string>
+    <string name="native_headline">Judul</string>
+    <string name="native_media_view">Tampilan Media</string>
     <string msgid="542007171693138492" name="navigation_menu">"Menu navigasi"</string>
     <string msgid="6610465462668679431" name="not_selected">"Tidak dipilih"</string>
+    <string name="notifications_permission_confirm">Izinkan</string>
+    <string name="notifications_permission_decline">Jangan izinkan</string>
+    <string name="notifications_permission_title">Izinkan aplikasi mengirim notifikasi kepada Anda?</string>
     <string msgid="875452955155264703" name="off">"Nonaktif"</string>
+    <string name="offline_dialog_image_description">Ikon</string>
+    <string name="offline_dialog_text">Terima kasih atas minat Anda.\nKami akan membagikan lebih banyak informasi setelah Anda kembali online.</string>
+    <string name="offline_notification_title">Anda kembali online. Mari kita lanjutkan progres sebelumnya</string>
+    <string name="offline_notification_title_with_advertiser">Anda kembali online. Lanjutkan mempelajari tentang %s</string>
+    <string name="offline_opt_in_confirm">Oke</string>
+    <string name="offline_opt_in_decline">Tidak</string>
+    <string name="offline_opt_in_message">Kami akan mengirimkan notifikasi kepada Anda berisi link ke situs pengiklan.</string>
+    <string name="offline_opt_in_title">Buka iklan ketika Anda kembali online.</string>
     <string msgid="8655164131929253426" name="on">"Aktif"</string>
     <string name="optimization_complete">✅ OPTIMASI SELESAI</string>
     <string name="optimizing_progress">⚡ MENGOPTIMALKAN...</string>
@@ -247,6 +283,13 @@
     <string name="result_managed">DIKELOLA</string>
     <string name="result_ram_freed">RAM Dibebaskan</string>
     <string name="result_thermal">Termal</string>
+    <string name="s1">Simpan gambar</string>
+    <string name="s2">Izinkan Iklan menyimpan gambar di Galeri foto?</string>
+    <string name="s3">Terima</string>
+    <string name="s4">Tolak</string>
+    <string name="s5">Buat acara kalender</string>
+    <string name="s6">Izinkan Iklan membuat acara kalender?</string>
+    <string name="s7">Tes Iklan</string>
     <string name="safety_text">Aplikasi ini tidak mengumpulkan data pribadi atau mengubah file game. Anda dapat menggunakannya dengan bebas dan aman. Kami tidak berafiliasi dengan Tencent.</string>
     <string name="safety_title">🛡 AKUN ANDA 100% AMAN</string>
     <string name="scope_2x">Bidikan 2×</string>
@@ -346,6 +389,7 @@
     <string msgid="3765533235322692011" name="tooltip_description">"tooltip"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"tampilkan tooltip"</string>
     <string name="value_active">AKTIF</string>
+    <string name="watermark_label_prefix">AdMob - </string>
     <string name="zero_lag_hint">Akan menutup app latar belakang dan mengoptimalkan mode %1$s</string>
     <string name="zero_lag_subtitle">Pengoptimal Performa</string>
     <string name="zero_lag_title">MODE TANPA LAG</string>

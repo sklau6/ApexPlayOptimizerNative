@@ -18,8 +18,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.BoostResult
+import com.apexplayoptimizer.app.data.DeviceOptimizer
+import com.apexplayoptimizer.app.data.OptimizeMode
 import com.apexplayoptimizer.app.data.rememberDeviceStats
+import androidx.compose.ui.platform.LocalContext
 import com.apexplayoptimizer.app.ui.theme.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 
 private data class ZeroLagMode(
@@ -44,11 +50,13 @@ fun ZeroLagScreen(nav: NavController) {
             listOf(stringResource(R.string.mode_extreme_f1), stringResource(R.string.mode_extreme_f2), stringResource(R.string.mode_extreme_f3), stringResource(R.string.mode_extreme_f4), stringResource(R.string.mode_extreme_f5)),
             Danger),
     )
+    val ctx             = LocalContext.current
     val stats by rememberDeviceStats()
-    var selectedMode    by remember { mutableStateOf("performance") }
-    var isOptimizing    by remember { mutableStateOf(false) }
+    var selectedMode     by remember { mutableStateOf("performance") }
+    var isOptimizing     by remember { mutableStateOf(false) }
     var optimizationDone by remember { mutableStateOf(false) }
-    var progress        by remember { mutableFloatStateOf(0f) }
+    var progress         by remember { mutableFloatStateOf(0f) }
+    var boostResult      by remember { mutableStateOf<BoostResult?>(null) }
 
     val current = modes.first { it.id == selectedMode }
 
@@ -62,14 +70,27 @@ fun ZeroLagScreen(nav: NavController) {
     LaunchedEffect(isOptimizing) {
         if (isOptimizing) {
             progress = 0f
-            var p = 0
-            while (p < 100) {
-                delay(150)
-                p = (p + 5).coerceAtMost(100)
-                progress = p / 100f
+            val mode = when (selectedMode) {
+                "balanced" -> OptimizeMode.BALANCED
+                "extreme"  -> OptimizeMode.GAMER
+                else       -> OptimizeMode.GAMER   // performance
             }
-            delay(200)
-            isOptimizing    = false
+            coroutineScope {
+                // Animate progress bar in parallel with real work
+                val anim = async {
+                    var p = 0
+                    while (p < 90) {
+                        delay(120)
+                        p = (p + 4).coerceAtMost(90)
+                        progress = p / 100f
+                    }
+                }
+                boostResult = DeviceOptimizer.runBoost(ctx, mode)
+                anim.cancel()
+            }
+            progress = 1f
+            delay(150)
+            isOptimizing     = false
             optimizationDone = true
         }
     }
@@ -95,7 +116,7 @@ fun ZeroLagScreen(nav: NavController) {
             ) { Text("⚙", fontSize = 16.sp) }
         }
 
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // Rocket area
             Box(Modifier.fillMaxWidth().padding(vertical = 28.dp), Alignment.Center) {
@@ -188,11 +209,12 @@ fun ZeroLagScreen(nav: NavController) {
                     }
                     if (optimizationDone) {
                         Spacer(Modifier.height(14.dp))
+                        val r = boostResult
                         listOf(
-                            "🧹" to stringResource(R.string.result_ram_freed)    to "~${(stats.ramUsed * 0.4f).toInt()}%",
-                            "⚡" to stringResource(R.string.result_cpu_optimized)  to stringResource(R.string.result_done),
-                            "🎯" to stringResource(R.string.result_fps_mode)       to if (selectedMode == "extreme") "144fps" else "120fps",
-                            "🌡" to stringResource(R.string.result_thermal)        to stringResource(R.string.result_managed),
+                            "🧹" to stringResource(R.string.result_ram_freed)   to if (r != null && r.ramFreedMb > 0) "${r.ramFreedMb} MB" else "Done",
+                            "⚡" to stringResource(R.string.result_cpu_optimized) to if (r != null) "${r.killedProcesses} apps" else stringResource(R.string.result_done),
+                            "🎯" to stringResource(R.string.result_fps_mode)      to if (r?.wakeLockActive == true) "Unlocked" else "Ready",
+                            "🔕" to "Do Not Disturb"                              to if (r?.dndEnabled == true) "ON" else "Skipped",
                         ).forEach { (pair, value) ->
                             val (icon, label) = pair
                             Box(Modifier.fillMaxWidth().padding(vertical = 6.dp).border(1.dp, DividerColor, RoundedCornerShape(0.dp))) {

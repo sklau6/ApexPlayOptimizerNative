@@ -49,11 +49,30 @@
     <string msgid="59049573811482460" name="call_notification_screening_text">"يتم فحص المكالمة الواردة"</string>
     <string msgid="406453423630273620" name="close_drawer">"إغلاق قائمة التنقل"</string>
     <string msgid="7573152094250666567" name="close_sheet">"إغلاق الورقة"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">تفعيل</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">‏لن يعمل %1$s ما لم يتم تفعيل خدمات Google Play.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">‏تفعيل خدمات Google Play</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">تثبيت</string>
+    <string name="common_google_play_services_install_text">‏لن يتم تشغيل %1$s بدون خدمات Google Play، والتي لا تتوفر على جهازك.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">‏الحصول على خدمات Google Play</string>
+    <string name="common_google_play_services_notification_channel_name">‏مدى توفّر خدمات Google Play</string>
+    <string name="common_google_play_services_notification_ticker">‏خطأ في خدمات Google Play</string>
+    <string name="common_google_play_services_unknown_issue">‏لدى %1$s مشكلة في خدمات Google Play. يُرجى إعادة المحاولة.</string>
+    <string name="common_google_play_services_unsupported_text">‏لن يتم تشغيل %1$s بدون خدمات Google Play التي لا يوفرها جهازك.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">تحديث</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">‏لن يتم تشغيل %1$s ما لم يتم تحديث خدمات Google Play.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">‏تحديث خدمات Google Play</string>
+    <string name="common_google_play_services_updating_text">‏لن يتم تشغيل %1$s بدون خدمات Google Play، والتي يتم تحديثها حاليًا.</string>
+    <string name="common_google_play_services_wear_update_text">‏يجب توفر إصدار جديد من خدمات Google Play. سيتم تحديثها تلقائيًا قريبًا.</string>
+    <string name="common_open_on_phone">فتح على الهاتف</string>
+    <string name="common_signin_button_text">تسجل الدخول</string>
+    <string name="common_signin_button_text_long">‏تسجيل الدخول عبر Google</string>
     <string name="connection_excellent">ممتاز</string>
     <string name="connection_fair">مقبول</string>
     <string name="connection_good">جيد</string>
     <string name="connection_poor">ضعيف</string>
     <string name="connection_suffix"> اتصال</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"تم نسخ الرابط إلى الحافظة."</string>
     <string name="dashboard_subtitle">جهاز أندرويد · %1$d%% CPU</string>
     <string name="dashboard_title">لوحة التحكم</string>
     <string msgid="8038256446254964252" name="default_error_message">"إدخال غير صالح"</string>
@@ -68,6 +87,9 @@
     <string name="dropdown_resolution">الدقة</string>
     <string name="dropdown_shadows">الظلال</string>
     <string name="dropdown_style">الأسلوب</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"نسخ الرابط"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"فتح في المتصفح"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"مشاركة الرابط"</string>
     <string name="feat_ai_boost">تعزيز AI</string>
     <string name="feat_ai_boost_desc">تحسين ذكي من 6 مراحل</string>
     <string name="feat_dashboard">لوحة التحكم</string>
@@ -225,9 +247,23 @@
     <string name="mode_performance_f4">فتح HDR</string>
     <string name="mode_performance_f5">وضع FPS القصوى</string>
     <string name="mode_power_save">توفير</string>
+    <string name="native_body">النص</string>
+    <string name="native_headline">العنوان</string>
+    <string name="native_media_view">عرض الوسائط</string>
     <string msgid="542007171693138492" name="navigation_menu">"قائمة تنقل"</string>
     <string msgid="6610465462668679431" name="not_selected">"غير محدّد"</string>
+    <string name="notifications_permission_confirm">السماح</string>
+    <string name="notifications_permission_decline">عدم السماح</string>
+    <string name="notifications_permission_title">هل تريد السماح للتطبيق بإرسال إشعارات إليك؟</string>
     <string msgid="875452955155264703" name="off">"غير مفعّل"</string>
+    <string name="offline_dialog_image_description">رمز</string>
+    <string name="offline_dialog_text">‏نشكرك على اهتمامك.\nسنشارك المزيد من المعلومات بعد إعادة الاتصال بالإنترنت.</string>
+    <string name="offline_notification_title">تمت إعادة الاتصال بالإنترنت وبإمكانك الآن الاستئناف من حيث توقفت</string>
+    <string name="offline_notification_title_with_advertiser">تمت إعادة الاتصال بالإنترنت وبإمكانك الآن مواصلة التعرّف على \"%s\"</string>
+    <string name="offline_opt_in_confirm">حسنًا</string>
+    <string name="offline_opt_in_decline">لا، شكرًا</string>
+    <string name="offline_opt_in_message">سنرسل إليك إشعارًا يحتوي على رابط إلى الموقع الإلكتروني للمعلِن.</string>
+    <string name="offline_opt_in_title">فتح العنوان عند إعادة الاتصال بالإنترنت</string>
     <string msgid="8655164131929253426" name="on">"مفعّل"</string>
     <string name="optimization_complete">✅ اكتمل التحسين</string>
     <string name="optimizing_progress">⚡ جارٍ التحسين...</string>
@@ -247,6 +283,13 @@
     <string name="result_managed">مُدار</string>
     <string name="result_ram_freed">ذاكرة محررة</string>
     <string name="result_thermal">الحرارة</string>
+    <string name="s1">حفظ الصورة</string>
+    <string name="s2">هل تريد السماح للإعلان بتخزين الصورة في معرض الصور؟</string>
+    <string name="s3">قبول</string>
+    <string name="s4">رفض</string>
+    <string name="s5">إنشاء حدث تقويم</string>
+    <string name="s6">هل تريد السماح للإعلان بإنشاء حدث تقويم؟</string>
+    <string name="s7">إعلان تجريبي</string>
     <string name="safety_text">لا يجمع هذا التطبيق بيانات شخصية ولا يعدّل ملفات اللعبة. يمكنك استخدامه بحرية وأمان. نحن غير تابعين لشركة Tencent.</string>
     <string name="safety_title">🛡 حسابك آمن 100%</string>
     <string name="scope_2x">مقراب 2×</string>
@@ -346,6 +389,7 @@
     <string msgid="3765533235322692011" name="tooltip_description">"تلميح"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"إظهار التلميح"</string>
     <string name="value_active">نشط</string>
+    <string name="watermark_label_prefix">AdMob - </string>
     <string name="zero_lag_hint">سيغلق التطبيقات الخلفية ويحسّن وضع %1$s</string>
     <string name="zero_lag_subtitle">محسّن الأداء</string>
     <string name="zero_lag_title">وضع بدون تأخير</string>

@@ -15,8 +15,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
+import android.app.Activity
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.DeviceOptimizer
+import com.apexplayoptimizer.app.data.GFXConfig
+import com.apexplayoptimizer.app.data.GFXConfigManager
 import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -31,6 +36,8 @@ private data class GFXSlider(val label: String, val max: Int, val color: Color)
 
 @Composable
 fun GFXToolScreen(nav: NavController) {
+    val ctx = LocalContext.current
+    val saved = remember { GFXConfigManager.load(ctx) }
     val sliders = listOf(
         GFXSlider(stringResource(R.string.slider_render_scale),    100, Blue),
         GFXSlider(stringResource(R.string.slider_texture_quality), 100, Primary),
@@ -39,20 +46,20 @@ fun GFXToolScreen(nav: NavController) {
         GFXSlider(stringResource(R.string.slider_post_processing), 100, Yellow),
         GFXSlider(stringResource(R.string.slider_lod_distance),    100, Color(0xFF00CCFF)),
     )
-    var quality    by remember { mutableStateOf("HD") }
-    var fps        by remember { mutableStateOf("60fps") }
-    var resolution by remember { mutableStateOf("1080p") }
-    var style      by remember { mutableStateOf("Default") }
-    var shadows    by remember { mutableStateOf("Low") }
-    var antiAlias  by remember { mutableStateOf("Off") }
-    var sliderVals by remember { mutableStateOf(listOf(85, 70, 40, 65, 55, 60)) }
+    var quality    by remember { mutableStateOf(saved.quality) }
+    var fps        by remember { mutableStateOf(saved.fps) }
+    var resolution by remember { mutableStateOf(saved.resolution) }
+    var style      by remember { mutableStateOf(saved.style) }
+    var shadows    by remember { mutableStateOf(saved.shadows) }
+    var antiAlias  by remember { mutableStateOf(saved.antiAlias) }
+    var sliderVals by remember { mutableStateOf(saved.sliderVals) }
     var page       by remember { mutableIntStateOf(0) }
-    var applied    by remember { mutableStateOf(false) }
+    var applied    by remember { mutableStateOf(GFXConfigManager.isSaved(ctx)) }
 
     val inf = rememberInfiniteTransition(label = "rot")
     val rot by inf.animateFloat(0f, 360f, infiniteRepeatable(tween(6000, easing = LinearEasing)), label = "r")
 
-    LaunchedEffect(applied) { if (applied) { delay(2500); applied = false } }
+    LaunchedEffect(applied) { if (applied) { delay(3000); applied = false } }
 
     Column(Modifier.fillMaxSize().background(Background)) {
         // Header
@@ -74,7 +81,7 @@ fun GFXToolScreen(nav: NavController) {
             ) { Text("🖥", fontSize = 16.sp) }
         }
 
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // Logo + gear
             Box(Modifier.fillMaxWidth().padding(vertical = 20.dp), Alignment.Center) {
@@ -187,7 +194,30 @@ fun GFXToolScreen(nav: NavController) {
             }
             Box(
                 Modifier.fillMaxWidth().padding(horizontal = 12.dp).clip(RoundedCornerShape(10.dp))
-                    .background(Blue).clickable { applied = true }.padding(vertical = 16.dp),
+                    .background(Blue)
+                    .clickable {
+                        val cfg = GFXConfig(
+                            quality    = quality,
+                            fps        = fps,
+                            resolution = resolution,
+                            style      = style,
+                            shadows    = shadows,
+                            antiAlias  = antiAlias,
+                            sliderVals = sliderVals
+                        )
+                        GFXConfigManager.save(ctx, cfg)
+                        // Apply preferred refresh rate to this app's window
+                        try {
+                            val activity = ctx as? Activity
+                            val lp = activity?.window?.attributes
+                            if (lp != null) {
+                                lp.preferredRefreshRate = DeviceOptimizer.preferredRefreshRate(fps)
+                                activity.window.attributes = lp
+                            }
+                        } catch (_: Exception) {}
+                        applied = true
+                    }
+                    .padding(vertical = 16.dp),
                 Alignment.Center
             ) { Text(stringResource(R.string.btn_apply_settings), fontSize = 14.sp, fontWeight = FontWeight.Black, color = Color.Black, letterSpacing = 2.sp) }
         }

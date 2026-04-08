@@ -84,7 +84,7 @@ fun SensitivityScreen(nav: NavController) {
             ) { Text("🎯", fontSize = 16.sp) }
         }
 
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // Preset selector (horizontal scroll)
             Text(stringResource(R.string.sensitivity_select_preset), fontSize = 10.sp, fontWeight = FontWeight.ExtraBold, color = TextMuted, letterSpacing = 2.sp, modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 10.dp))

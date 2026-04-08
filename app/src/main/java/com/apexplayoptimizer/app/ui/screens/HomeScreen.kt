@@ -16,10 +16,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.DeviceOptimizer
+import com.apexplayoptimizer.app.data.BoostResult
+import com.apexplayoptimizer.app.data.OptimizeMode
+import com.apexplayoptimizer.app.data.MonetizationManager
+import com.apexplayoptimizer.app.data.UserTier
 import com.apexplayoptimizer.app.data.rememberDeviceStats
+import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.components.CircularGauge
+import com.apexplayoptimizer.app.ui.components.RewardedAdDialog
 import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
@@ -44,10 +52,16 @@ fun HomeScreen(nav: NavController) {
         GamingMode("🔥", R.string.mode_gamer,      Orange),
     )
 
+    val ctx             = LocalContext.current
+    val tier            = remember { MonetizationManager.getTier(ctx) }
+    var credits         by remember { mutableStateOf(MonetizationManager.getCredits(ctx)) }
+    var showRewardedAd  by remember { mutableStateOf(false) }
+
     val stats by rememberDeviceStats()
     var boosting     by remember { mutableStateOf(false) }
     var boostDone    by remember { mutableStateOf(false) }
     var selectedMode by remember { mutableIntStateOf(1) }
+    var boostResult  by remember { mutableStateOf<BoostResult?>(null) }
 
     val pingDisplay = if (stats.ping < 0) "—" else "${stats.ping}"
     val pingColor   = if (stats.ping < 0) TextMuted else if (stats.ping > 80) Danger else if (stats.ping > 40) Orange else Primary
@@ -62,12 +76,34 @@ fun HomeScreen(nav: NavController) {
     val perfColor  = if (perfScore > 75) Primary else if (perfScore > 50) Orange else Danger
 
     LaunchedEffect(boosting) {
-        if (boosting) { delay(3_200); boosting = false; boostDone = true; delay(4_000); boostDone = false }
+        if (boosting) {
+            val mode = when (selectedMode) {
+                0    -> OptimizeMode.POWER_SAVE
+                2    -> OptimizeMode.GAMER
+                else -> OptimizeMode.BALANCED
+            }
+            boostResult = DeviceOptimizer.runBoost(ctx, mode)
+            boosting  = false
+            boostDone = true
+            delay(6_000)
+            boostDone = false
+        }
+    }
+
+    if (showRewardedAd) {
+        RewardedAdDialog(
+            rewardCredits = 3,
+            onRewarded = {
+                showRewardedAd = false
+                credits = MonetizationManager.getCredits(ctx)
+            },
+            onDismiss = { showRewardedAd = false }
+        )
     }
 
     Column(Modifier.fillMaxSize().background(Background)) {
 
-        // ── Header bar ──────────────────────────────────────────────────────
+        // ── Header bar ──────────────────────────────────────────────
         Box(
             Modifier.fillMaxWidth()
                 .background(Brush.verticalGradient(listOf(Surface, Background)))
@@ -100,18 +136,39 @@ fun HomeScreen(nav: NavController) {
                         )
                     }
                 }
-                Box(
-                    Modifier.size(40.dp).clip(RoundedCornerShape(12.dp))
-                        .background(Card)
-                        .border(1.dp, CardBorder, RoundedCornerShape(12.dp))
-                        .clickable { nav.navigate(Screen.Settings.route) },
-                    Alignment.Center
-                ) { Text("⚙", fontSize = 18.sp) }
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    if (tier == UserTier.FREE) {
+                        Box(
+                            Modifier.clip(RoundedCornerShape(10.dp))
+                                .background(Brush.horizontalGradient(listOf(Purple.copy(0.85f), Purple)))
+                                .clickable { nav.navigate(Screen.Premium.route) }
+                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                        ) {
+                            Text(stringResource(R.string.home_go_pro), fontSize = 10.sp, fontWeight = FontWeight.Black, color = Color.White, letterSpacing = 0.5.sp)
+                        }
+                    } else {
+                        Box(
+                            Modifier.clip(RoundedCornerShape(10.dp))
+                                .background(Purple.copy(0.12f))
+                                .border(1.dp, Purple.copy(0.3f), RoundedCornerShape(10.dp))
+                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                        ) {
+                            Text("⭐ ${tier.displayName}", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = Purple)
+                        }
+                    }
+                    Box(
+                        Modifier.size(40.dp).clip(RoundedCornerShape(12.dp))
+                            .background(Card)
+                            .border(1.dp, CardBorder, RoundedCornerShape(12.dp))
+                            .clickable { nav.navigate(Screen.Settings.route) },
+                        Alignment.Center
+                    ) { Text("⚙", fontSize = 18.sp) }
+                }
             }
         }
 
         // ── Scrollable body ──────────────────────────────────────────────────
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 88.dp)) {
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
 
             // ── TurboSpeed-style gauge dashboard ────────────────────────────
             Box(
@@ -255,12 +312,39 @@ fun HomeScreen(nav: NavController) {
                             color = Color.White, letterSpacing = 1.sp
                         )
                         Text(
-                            if (boosting) stringResource(R.string.boost_cleaning_tuning)
-                            else if (boostDone) stringResource(R.string.boost_all_optimal)
-                            else stringResource(R.string.boost_one_tap),
+                            when {
+                                boosting  -> stringResource(R.string.boost_cleaning_tuning)
+                                boostDone && boostResult != null ->
+                                    stringResource(R.string.boost_result_freed, boostResult!!.ramFreedMb, boostResult!!.killedProcesses)
+                                boostDone -> stringResource(R.string.boost_all_optimal)
+                                else      -> stringResource(R.string.boost_one_tap)
+                            },
                             fontSize = 10.sp, color = Color.White.copy(0.75f)
                         )
                     }
+                }
+            }
+
+            // ── Rewarded ad CTA (free users only) ───────────────────────
+            if (tier == UserTier.FREE && MonetizationManager.canWatchAd(ctx)) {
+                Row(
+                    Modifier.fillMaxWidth().padding(horizontal = 12.dp).padding(bottom = 8.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Primary.copy(0.06f))
+                        .border(1.dp, Primary.copy(0.15f), RoundedCornerShape(12.dp))
+                        .clickable { showRewardedAd = true }
+                        .padding(12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text("🎥", fontSize = 18.sp)
+                        Column {
+                            Text(stringResource(R.string.home_watch_ad), fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Primary)
+                            Text(stringResource(R.string.home_credits_remaining, credits), fontSize = 10.sp, color = TextMuted)
+                        }
+                    }
+                    Text(stringResource(R.string.home_watch_cta), fontSize = 11.sp, color = Primary, fontWeight = FontWeight.Bold)
                 }
             }
 
@@ -318,6 +402,48 @@ fun HomeScreen(nav: NavController) {
                         if (row.size == 1) Spacer(Modifier.weight(1f))
                     }
                 }
+            }
+
+            // ── Sponsored partner strip ────────────────────────────────
+            Box(
+                Modifier.fillMaxWidth().padding(horizontal = 12.dp).padding(bottom = 10.dp)
+                    .clip(RoundedCornerShape(14.dp)).background(Card)
+                    .border(1.dp, CardBorder, RoundedCornerShape(14.dp))
+                    .clickable { nav.navigate(Screen.Store.route) }
+                    .padding(12.dp)
+            ) {
+                Row(
+                    Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Text("🤝", fontSize = 16.sp)
+                        Column {
+                            Text(stringResource(R.string.partner_label), fontSize = 8.sp, fontWeight = FontWeight.ExtraBold, color = TextMuted, letterSpacing = 1.5.sp)
+                            Text(stringResource(R.string.partner_name), fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
+                        }
+                    }
+                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Box(
+                            Modifier.clip(RoundedCornerShape(6.dp))
+                                .background(Orange.copy(0.12f))
+                                .border(1.dp, Orange.copy(0.3f), RoundedCornerShape(6.dp))
+                                .padding(horizontal = 7.dp, vertical = 3.dp)
+                        ) { Text(stringResource(R.string.partner_discount), fontSize = 9.sp, color = Orange, fontWeight = FontWeight.Black) }
+                        Text("›", fontSize = 16.sp, color = TextMuted)
+                    }
+                }
+            }
+
+            // ── Banner ad (free users only) ──────────────────────────────────
+            if (tier == UserTier.FREE) {
+                BannerAdView(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp)
+                        .padding(bottom = 8.dp)
+                )
             }
 
             // ── Pro tip ─────────────────────────────────────────────────────
