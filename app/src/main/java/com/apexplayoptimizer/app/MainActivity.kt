@@ -6,8 +6,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.WindowCompat
+import com.apexplayoptimizer.app.data.AppOpenAdManager
 import com.apexplayoptimizer.app.data.InterstitialAdManager
 import com.apexplayoptimizer.app.data.RewardedAdManager
+import com.apexplayoptimizer.app.data.RewardedInterstitialAdManager
 import com.apexplayoptimizer.app.ui.navigation.AppNavigation
 import com.apexplayoptimizer.app.ui.theme.ApexPlayTheme
 import com.google.android.gms.ads.MobileAds
@@ -23,10 +25,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        // Initialize AdMob SDK, then preload ad units for instant display
+        // Initialize AdMob SDK, then preload ALL ad units for maximum revenue
         MobileAds.initialize(this) {
+            // Preload all 6 ad types
+            AppOpenAdManager.preload(this)
             InterstitialAdManager.preload(this)
             RewardedAdManager.preload(this)
+            RewardedInterstitialAdManager.preload(this)
         }
 
         setContent {
@@ -34,5 +39,11 @@ class MainActivity : ComponentActivity() {
                 AppNavigation()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Show App Open ad when app comes to foreground (if ready)
+        AppOpenAdManager.show(this)
     }
 }

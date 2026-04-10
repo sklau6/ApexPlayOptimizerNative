@@ -1,6 +1,7 @@
 package com.apexplayoptimizer.app.ui.components
 
 import android.app.Activity
+import android.util.Log
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -24,10 +25,14 @@ import com.apexplayoptimizer.app.R
 import com.apexplayoptimizer.app.data.MonetizationManager
 import com.apexplayoptimizer.app.data.RewardedAdManager
 import com.apexplayoptimizer.app.ui.theme.*
+import kotlinx.coroutines.delay
+
+private const val TAG = "RewardedAdDialog"
+private const val AD_LOAD_TIMEOUT_MS = 10000L // 10 seconds timeout
 
 /**
  * Shows a real AdMob rewarded ad via [RewardedAdManager].
- * Falls back to a brief loading state if the ad is not yet ready.
+ * Waits for ad to be ready with timeout, then shows the ad.
  * [onRewarded] is called when the user earns the reward.
  * [onDismiss] is always called after the ad closes.
  */
@@ -43,30 +48,53 @@ fun RewardedAdDialog(
     var adComplete    by remember { mutableStateOf(false) }
     var rewardClaimed by remember { mutableStateOf(false) }
     var adStarted     by remember { mutableStateOf(false) }
+    var isWaiting     by remember { mutableStateOf(true) }
 
     val inf  = rememberInfiniteTransition(label = "pulse")
     val glow by inf.animateFloat(0.6f, 1f, infiniteRepeatable(tween(800), RepeatMode.Reverse), label = "glow")
 
-    // Launch the real AdMob rewarded ad as soon as the dialog is composed
+    // Wait for ad to be ready with timeout, then show
     LaunchedEffect(Unit) {
-        if (activity == null || !RewardedAdManager.isReady) {
-            // Ad not yet loaded — grant reward anyway so UX isn't broken
+        if (activity == null) {
+            Log.e(TAG, "Activity is null, cannot show rewarded ad")
+            isWaiting = false
+            adComplete = true
+            return@LaunchedEffect
+        }
+
+        // Wait for ad to be ready (with timeout)
+        var waited = 0L
+        while (!RewardedAdManager.isReady && waited < AD_LOAD_TIMEOUT_MS) {
+            delay(500)
+            waited += 500
+        }
+
+        isWaiting = false
+
+        if (!RewardedAdManager.isReady) {
+            Log.w(TAG, "Ad not ready after timeout, granting reward without ad")
+            // Ad not loaded in time — grant reward anyway so UX isn't broken
             MonetizationManager.recordAdView(ctx)
             if (rewardCredits > 0) MonetizationManager.addCredits(ctx, rewardCredits)
             if (rewardTokens  > 0) MonetizationManager.addTokens(ctx, rewardTokens)
             adComplete = true
             return@LaunchedEffect
         }
+
+        // Show the rewarded ad
         adStarted = true
+        Log.d(TAG, "Showing rewarded ad...")
         RewardedAdManager.show(
             activity  = activity,
-            onRewarded = { _ ->
+            onRewarded = { amount ->
+                Log.d(TAG, "Reward earned: $amount")
                 MonetizationManager.recordAdView(ctx)
                 if (rewardCredits > 0) MonetizationManager.addCredits(ctx, rewardCredits)
                 if (rewardTokens  > 0) MonetizationManager.addTokens(ctx, rewardTokens)
                 adComplete = true
             },
             onDismiss  = {
+                Log.d(TAG, "Ad dismissed, adComplete=$adComplete")
                 // If user closed without reward, still dismiss
                 if (!adComplete) onDismiss()
             }
@@ -92,8 +120,16 @@ fun RewardedAdDialog(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    if (!adComplete) {
-                        // ── Loading state ────────────────────────────────────────
+                    if (isWaiting) {
+                        // ── Waiting for ad to be ready ───────────────────────────
+                        Text("⏳", fontSize = 48.sp)
+                        Text("Preparing your ad...", fontSize = 14.sp, color = TextMuted)
+                        Text(
+                            "Please wait a moment",
+                            fontSize = 12.sp, color = TextSecondary, textAlign = TextAlign.Center
+                        )
+                    } else if (!adComplete) {
+                        // ── Loading state (ad starting) ──────────────────────────
                         Text("🎁", fontSize = 48.sp)
                         Text(stringResource(R.string.ad_loading), fontSize = 14.sp, color = TextMuted)
                         Text(

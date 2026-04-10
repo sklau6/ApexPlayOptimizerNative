@@ -12,10 +12,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ApexPlayOptimizer">
-        <!-- TODO: Replace with your real AdMob App ID from the AdMob dashboard -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-5428983411611852~2597826529" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

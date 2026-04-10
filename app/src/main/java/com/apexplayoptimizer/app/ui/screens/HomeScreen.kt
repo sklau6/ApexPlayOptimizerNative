@@ -27,6 +27,7 @@ import com.apexplayoptimizer.app.data.UserTier
 import com.apexplayoptimizer.app.data.rememberDeviceStats
 import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.components.CircularGauge
+import com.apexplayoptimizer.app.ui.components.NativeAdView
 import com.apexplayoptimizer.app.ui.components.RewardedAdDialog
 import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
@@ -443,6 +444,15 @@ fun HomeScreen(nav: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 12.dp)
                         .padding(bottom = 8.dp)
+                )
+            }
+
+            // ── Native Advanced ad (free users only) ─────────────────────────
+            if (tier == UserTier.FREE) {
+                NativeAdView(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp, vertical = 8.dp)
                 )
             }
 

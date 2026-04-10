@@ -23,7 +23,7 @@ object LocaleHelper {
 
     fun wrap(context: Context): Context {
         val language = getSavedLanguage(context)
-        return if (language == "en") context else applyLocale(context, language)
+        return applyLocale(context, language)
     }
 
     fun getSavedLanguage(context: Context): String {
