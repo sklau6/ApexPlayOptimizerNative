@@ -51,6 +51,13 @@ private val LANG_OPTIONS = listOf(
     LangOption("ar",    R.string.lang_arabic),
     LangOption("in",    R.string.lang_indonesian),
     LangOption("pt",    R.string.lang_portuguese),
+    LangOption("es",    R.string.lang_spanish),
+    LangOption("fr",    R.string.lang_french),
+    LangOption("de",    R.string.lang_german),
+    LangOption("ja",    R.string.lang_japanese),
+    LangOption("th",    R.string.lang_thai),
+    LangOption("ru",    R.string.lang_russian),
+    LangOption("ko",    R.string.lang_korean),
 )
 
 @Composable
@@ -137,7 +144,7 @@ fun SettingsScreen(nav: NavController) {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Row(Modifier.weight(1f).padding(end = 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         val dot = when (tier) { UserTier.PRO -> Purple; UserTier.PLUS -> Primary; else -> TextMuted }
                         Box(Modifier.size(8.dp).clip(RoundedCornerShape(4.dp)).background(dot))
                         Column {
@@ -148,7 +155,8 @@ fun SettingsScreen(nav: NavController) {
                     Text(if (tier == UserTier.FREE) stringResource(R.string.settings_upgrade_cta) else stringResource(R.string.settings_manage_cta),
                         fontSize = 12.sp,
                         color = if (tier == UserTier.FREE) Purple else Primary,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1
                     )
                 }
                 SettingsDivider()
@@ -159,14 +167,14 @@ fun SettingsScreen(nav: NavController) {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Row(Modifier.weight(1f).padding(end = 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text("🛒", fontSize = 16.sp)
                         Column {
                             Text(stringResource(R.string.settings_store_title), fontSize = 11.sp, color = TextMuted, fontWeight = FontWeight.SemiBold)
                             Text(stringResource(R.string.settings_credits_tokens, credits, tokens), fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
                         }
                     }
-                    Text(stringResource(R.string.settings_shop_cta), fontSize = 12.sp, color = Primary, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.settings_shop_cta), fontSize = 12.sp, color = Primary, fontWeight = FontWeight.Bold, maxLines = 1)
                 }
             }
 
@@ -186,7 +194,11 @@ fun SettingsScreen(nav: NavController) {
             SettingsGroup {
                 SettingsToggle("📊", stringResource(R.string.toggle_hud_overlay),  stringResource(R.string.toggle_hud_overlay_sub),  s.hudOverlay)   { s = s.copy(hudOverlay = !s.hudOverlay) }
                 SettingsDivider()
-                SettingsToggle("🌙", stringResource(R.string.toggle_dark_theme),   stringResource(R.string.toggle_dark_theme_sub),   s.darkTheme)    { s = s.copy(darkTheme = !s.darkTheme) }
+                SettingsToggle("🌙", stringResource(R.string.toggle_dark_theme),   stringResource(R.string.toggle_dark_theme_sub),   s.darkTheme)    {
+                    s = s.copy(darkTheme = !s.darkTheme)
+                    SettingsPrefs.saveAll(context, s.autoBoost, s.gamingMode, s.hudOverlay, s.notifications, s.vibration, s.darkTheme, s.autoKillApps, s.cpuOptimize, s.networkOptimize, s.thermalProtect, s.batteryMode, s.fpsCap)
+                    (context as? Activity)?.recreate()
+                }
                 SettingsDivider()
                 SettingsToggle("🎯", stringResource(R.string.toggle_fps_cap),      stringResource(R.string.toggle_fps_cap_sub),      s.fpsCap)       { s = s.copy(fpsCap = !s.fpsCap) }
             }
@@ -248,7 +260,7 @@ fun SettingsScreen(nav: NavController) {
 
             SettingsSectionTitle(stringResource(R.string.section_about))
             SettingsGroup {
-                SettingsValueRow("📱", stringResource(R.string.about_app_version), null, "v1.0.0")
+                SettingsValueRow("📱", stringResource(R.string.about_app_version), null, "v1.0.3")
                 SettingsDivider()
                 SettingsNavRow("🛡", stringResource(R.string.about_data_safety),      stringResource(R.string.about_data_safety_sub))
                 SettingsDivider()

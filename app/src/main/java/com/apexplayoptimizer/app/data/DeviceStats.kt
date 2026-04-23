@@ -114,14 +114,18 @@ private fun readBatteryTemp(ctx: Context): Float = try {
         .coerceIn(20f, 90f)
 } catch (_: Exception) { 36f }
 
+private val STANDARD_STORAGE_SIZES = listOf(16, 32, 64, 128, 256, 512, 1024)
+private fun roundToStandardStorageGb(rawGb: Int): Int =
+    STANDARD_STORAGE_SIZES.minByOrNull { kotlin.math.abs(it - rawGb) } ?: rawGb
+
 private fun readStorage(): Pair<Float, Int> = try {
     val fs      = StatFs(Environment.getExternalStorageDirectory().path)
     val bsz     = fs.blockSizeLong
     val total   = fs.blockCountLong * bsz
     val avail   = fs.availableBlocksLong * bsz
     val usedGb  = ((total - avail) / 1_073_741_824f).coerceAtLeast(0f)
-    val totalGb = (total / 1_073_741_824f).toInt().coerceAtLeast(1)
-    usedGb to totalGb
+    val rawGb   = (total / 1_073_741_824f).toInt().coerceAtLeast(1)
+    usedGb to roundToStandardStorageGb(rawGb)
 } catch (_: Exception) { 32f to 64 }
 
 private suspend fun measurePing(): Int = withContext(Dispatchers.IO) {

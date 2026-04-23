@@ -2,6 +2,7 @@ package com.apexplayoptimizer.app.ui.screens
 
 import android.app.Activity
 import androidx.annotation.StringRes
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,10 +14,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -43,7 +44,7 @@ private data class Plan(
 private val PLANS = listOf(
     Plan(
         tier = UserTier.FREE, monthlyFull = "Free", yearlyFull = "Free",
-        yearlyNoteRes = R.string.premium_always_free, badgeRes = null, color = TextMuted,
+        yearlyNoteRes = R.string.premium_always_free, badgeRes = null, color = Color(0xFF4A5568),
         features = listOf(
             PlanFeature(R.string.plan_free_f1, true),
             PlanFeature(R.string.plan_free_f2, true),
@@ -58,7 +59,7 @@ private val PLANS = listOf(
     ),
     Plan(
         tier = UserTier.PLUS, monthlyFull = "\$4.99/mo", yearlyFull = "\$3.33/mo",
-        yearlyNoteRes = R.string.plan_plus_yearly_note, badgeRes = R.string.premium_badge_popular, color = Primary,
+        yearlyNoteRes = R.string.plan_plus_yearly_note, badgeRes = R.string.premium_badge_popular, color = Color(0xFF4C8BF5),
         features = listOf(
             PlanFeature(R.string.plan_plus_f1, true),
             PlanFeature(R.string.plan_plus_f2, true),
@@ -73,7 +74,7 @@ private val PLANS = listOf(
     ),
     Plan(
         tier = UserTier.PRO, monthlyFull = "\$29.99/mo", yearlyFull = "\$19.99/mo",
-        yearlyNoteRes = R.string.plan_pro_yearly_note, badgeRes = R.string.badge_pro, color = Purple,
+        yearlyNoteRes = R.string.plan_pro_yearly_note, badgeRes = R.string.badge_pro, color = Color(0xFF8B5CF6),
         features = listOf(
             PlanFeature(R.string.plan_pro_f1, true),
             PlanFeature(R.string.plan_pro_f2, true),
@@ -91,7 +92,6 @@ private val PLANS = listOf(
 fun PremiumScreen(nav: NavController) {
     val ctx          = LocalContext.current
     val activity     = ctx as? Activity
-    val uriHandler   = LocalUriHandler.current
     val scope        = rememberCoroutineScope()
     var currentTier  by rememberUserTierLocal(ctx)
     var billingCycle by remember { mutableStateOf("yearly") }
@@ -187,9 +187,10 @@ fun PremiumScreen(nav: NavController) {
                     ) {
                         Text(
                             label,
-                            fontSize = 12.sp,
+                            fontSize = 11.sp,
                             fontWeight = if (sel) FontWeight.Bold else FontWeight.Normal,
-                            color = if (sel) Color.White else TextMuted
+                            color = if (sel) Color.White else TextMuted,
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
@@ -216,45 +217,24 @@ fun PremiumScreen(nav: NavController) {
 
                         if (activity != null && details != null && token != null) {
                             billingManager.launchPurchaseFlow(activity, details, token)
+                        } else if (!billingState.connected) {
+                            Toast.makeText(
+                                ctx,
+                                "Not connected to Play Store. Check your internet and try again.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            billingManager.startConnection()
                         } else {
-                            // Products not yet loaded from Play Store — fall back to website
-                            uriHandler.openUri(
-                                "https://apexplayoptimizer.com/subscribe?plan=${selected.tier.name.lowercase()}&cycle=$billingCycle"
-                            )
+                            Toast.makeText(
+                                ctx,
+                                "Products are not available yet. Please ensure subscriptions are created in Play Console.",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
                 )
                 Spacer(Modifier.height(10.dp))
             }
-
-            // ── Web billing notice ───────────────────────────────────────────────
-            Box(
-                Modifier.fillMaxWidth().padding(horizontal = 16.dp)
-                    .clip(RoundedCornerShape(14.dp))
-                    .background(Blue.copy(0.05f))
-                    .border(1.dp, Blue.copy(0.15f), RoundedCornerShape(14.dp))
-                    .padding(14.dp)
-            ) {
-                Row(verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text("🌐", fontSize = 18.sp)
-                    Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
-                        Text(stringResource(R.string.premium_web_billing_title), fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Blue)
-                        Text(
-                            stringResource(R.string.premium_web_billing_desc),
-                            fontSize = 11.sp, color = TextSecondary, lineHeight = 17.sp
-                        )
-                        Text(
-                            stringResource(R.string.premium_web_billing_link),
-                            fontSize = 12.sp, color = Blue, fontWeight = FontWeight.SemiBold,
-                            modifier = Modifier.clickable {
-                                uriHandler.openUri("https://apexplayoptimizer.com/subscribe")
-                            }
-                        )
-                    }
-                }
-            }
-
-            Spacer(Modifier.height(14.dp))
 
             // ── Compliance footer ────────────────────────────────────────────────
             Column(
@@ -274,11 +254,9 @@ fun PremiumScreen(nav: NavController) {
                     fontSize = 10.sp, color = TextMuted, textAlign = TextAlign.Center, lineHeight = 15.sp
                 )
                 Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                    Text(stringResource(R.string.premium_terms), fontSize = 10.sp, color = TextMuted,
-                        modifier = Modifier.clickable { uriHandler.openUri("https://apexplayoptimizer.com/terms") })
+                    Text(stringResource(R.string.premium_terms), fontSize = 10.sp, color = TextMuted)
                     Text("·", fontSize = 10.sp, color = TextMuted)
-                    Text(stringResource(R.string.premium_privacy), fontSize = 10.sp, color = TextMuted,
-                        modifier = Modifier.clickable { uriHandler.openUri("https://apexplayoptimizer.com/privacy") })
+                    Text(stringResource(R.string.premium_privacy), fontSize = 10.sp, color = TextMuted)
                 }
             }
         }
@@ -381,10 +359,7 @@ private fun PlanCard(
                             .padding(vertical = 14.dp),
                         Alignment.Center
                     ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text(stringResource(R.string.premium_cta_website), fontSize = 14.sp, fontWeight = FontWeight.Black, color = Color.White)
-                            Text(stringResource(R.string.premium_cta_website_sub), fontSize = 10.sp, color = Color.White.copy(0.75f))
-                        }
+                        Text(stringResource(R.string.premium_cta_get_pro), fontSize = 14.sp, fontWeight = FontWeight.Black, color = Color.White)
                     }
                 }
                 plan.tier == UserTier.PLUS -> {

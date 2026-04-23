@@ -4,6 +4,23 @@
             "outputFile": "com.apexplayoptimizer.app-mergeDebugResources-61:/values-zu/values-zu.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\8eb7132933409f291422316864c1e607\\transformed\\play-services-basement-18.4.0\\res\\values-zu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "127",
+                        "endOffsets": "322"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "2069",
+                        "endColumns": "131",
+                        "endOffsets": "2196"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\495411c6119017cc9c39592f256a055c\\transformed\\core-1.13.1\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -55,20 +72,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\092aa49393f6c5a635ee06e1265266f4\\transformed\\browser-1.4.0\\res\\values-zu\\values-zu.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\100fccee7dac35af44f2fb34cb842873\\transformed\\play-services-ads-23.6.0\\res\\values-zu\\values.xml",
                     "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,167,275,387",
-                        "endColumns": "111,107,111,111",
-                        "endOffsets": "162,270,382,494"
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,243,295,356,420,488,585,654,786,896,1023,1080,1142,1251,1337,1384,1471,1507,1542,1593,1667,1712",
+                        "endColumns": "43,51,60,63,67,96,68,131,109,126,56,61,108,85,46,86,35,34,50,73,44,57",
+                        "endOffsets": "242,294,355,419,487,584,653,785,895,1022,1079,1141,1250,1336,1383,1470,1506,1541,1592,1666,1711,1769"
                     },
                     "to": {
-                        "startLines": "29,33,34,35",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "3297,3709,3817,3929",
-                        "endColumns": "111,107,111,111",
-                        "endOffsets": "3404,3812,3924,4036"
+                        "startLines": "94,95,96,99,100,101,103,104,105,106,107,108,109,110,114,115,116,117,118,119,120,128",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "10432,10480,10536,10777,10845,10917,11086,11159,11295,11409,11540,11601,11667,11780,12114,12165,12256,12296,12335,12390,12468,13150",
+                        "endColumns": "47,55,64,67,71,100,72,135,113,130,60,65,112,89,50,90,39,38,54,77,48,61",
+                        "endOffsets": "10475,10531,10596,10840,10912,11013,11154,11290,11404,11535,11596,11662,11775,11865,12160,12251,12291,12330,12385,12463,12512,13207"
                     }
                 },
                 {
@@ -106,37 +123,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\a1a78c5850b92dceae748d98130b63f9\\transformed\\play-services-basement-18.3.0\\res\\values-zu\\values.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d9d8fc7fdce6ed50e214c4f766148139\\transformed\\browser-1.8.0\\res\\values-zu\\values-zu.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "127",
-                        "endOffsets": "322"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,167,275,387",
+                        "endColumns": "111,107,111,111",
+                        "endOffsets": "162,270,382,494"
                     },
                     "to": {
-                        "startLines": "19",
-                        "startColumns": "4",
-                        "startOffsets": "2069",
-                        "endColumns": "131",
-                        "endOffsets": "2196"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d2f46e653472af84c6f9593e97e60554\\transformed\\play-services-ads-23.2.0\\res\\values-zu\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "199,243,295,356,420,488,585,654,786,896,1023,1080,1142,1251,1337,1384,1471,1507,1542,1593,1667,1712",
-                        "endColumns": "43,51,60,63,67,96,68,131,109,126,56,61,108,85,46,86,35,34,50,73,44,57",
-                        "endOffsets": "242,294,355,419,487,584,653,785,895,1022,1079,1141,1250,1336,1383,1470,1506,1541,1592,1666,1711,1769"
-                    },
-                    "to": {
-                        "startLines": "94,95,96,99,100,101,103,104,105,106,107,108,109,110,114,115,116,117,118,119,120,128",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "10432,10480,10536,10777,10845,10917,11086,11159,11295,11409,11540,11601,11667,11780,12114,12165,12256,12296,12335,12390,12468,13150",
-                        "endColumns": "47,55,64,67,71,100,72,135,113,130,60,65,112,89,50,90,39,38,54,77,48,61",
-                        "endOffsets": "10475,10531,10596,10840,10912,11013,11154,11290,11404,11535,11596,11662,11775,11865,12160,12251,12291,12330,12385,12463,12512,13207"
+                        "startLines": "29,33,34,35",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3297,3709,3817,3929",
+                        "endColumns": "111,107,111,111",
+                        "endOffsets": "3404,3812,3924,4036"
                     }
                 }
             ]

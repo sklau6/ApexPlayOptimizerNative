@@ -1,5 +1,10 @@
 package com.apexplayoptimizer.app.ui.screens
 
+import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -9,11 +14,17 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
@@ -21,9 +32,12 @@ import com.apexplayoptimizer.app.data.DeviceHardwareInfo
 import com.apexplayoptimizer.app.data.DeviceStats
 import com.apexplayoptimizer.app.data.rememberDeviceHardwareInfo
 import com.apexplayoptimizer.app.data.rememberDeviceStats
+import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
+import kotlin.math.cos
+import kotlin.math.sin
 
 private val GFX_GRAPHICS   = listOf("Super Smooth","Smooth","Balanced","HD","HDR","Ultra HD")
 private val GFX_FRAMERATE  = listOf("30Hz","60Hz","90Hz","120Hz","144Hz")
@@ -192,6 +206,14 @@ fun DashboardScreen(nav: NavController) {
                         }
                     }
                 }
+
+                // ── Banner ad ────────────────────────────────────────────────
+                BannerAdView(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp)
+                        .padding(top = 10.dp, bottom = 8.dp)
+                )
             }
         }
         if (showAI) AIBoostOverlay(stats.ramUsed, stats.cpuLoad, stats.temperature.toInt()) { showAI = false }
@@ -229,7 +251,8 @@ private fun OverviewTab(stats: DeviceStats, hw: DeviceHardwareInfo, pingDisplay:
             InfoCard(Modifier.weight(1f)) {
                 MonitorCardHeader(stringResource(R.string.card_storage), "💾")
                 BigValue("${(stats.storageUsed / stats.storageTotal * 100).toInt()}%", Purple)
-                SmallLabel("${"%.1f".format(stats.storageUsed)} GB / ${stats.storageTotal} GB")
+                SmallLabel("${"%.1f".format(stats.storageUsed)} GB used")
+                SmallLabel("out of ${stats.storageTotal} GB")
                 MiniBar(stats.storageUsed / stats.storageTotal, Purple)
             }
             InfoCard(Modifier.weight(1f)) {
@@ -277,6 +300,9 @@ private fun OverviewTab(stats: DeviceStats, hw: DeviceHardwareInfo, pingDisplay:
                 SmallLabel(stringResource(R.string.label_system_apps, hw.systemApps))
             }
         }
+
+        // Compass card full-width
+        CompassCard(Modifier.fillMaxWidth())
     }
 }
 
@@ -567,6 +593,164 @@ private fun ElecStat(value: String, label: String) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(value, fontSize = 16.sp, fontWeight = FontWeight.Black, color = TextPrimary)
         Text(label, fontSize = 10.sp, color = TextMuted, letterSpacing = 0.5.sp)
+    }
+}
+
+// ── Compass ───────────────────────────────────────────────────────────────────
+
+@Composable
+private fun rememberCompassBearing(): Float {
+    val ctx = LocalContext.current
+    var bearing by remember { mutableFloatStateOf(0f) }
+    DisposableEffect(Unit) {
+        val sm = ctx.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        val sensor = sm.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+        val listener = object : SensorEventListener {
+            private val matrix = FloatArray(9)
+            private val orient = FloatArray(3)
+            override fun onSensorChanged(e: SensorEvent) {
+                SensorManager.getRotationMatrixFromVector(matrix, e.values)
+                SensorManager.getOrientation(matrix, orient)
+                bearing = Math.toDegrees(orient[0].toDouble()).toFloat()
+            }
+            override fun onAccuracyChanged(s: Sensor?, a: Int) {}
+        }
+        sensor?.let { sm.registerListener(listener, it, SensorManager.SENSOR_DELAY_UI) }
+        onDispose { sm.unregisterListener(listener) }
+    }
+    return bearing
+}
+
+@Composable
+private fun CompassCard(modifier: Modifier = Modifier) {
+    val rawBearing = rememberCompassBearing()
+    val animBearing by animateFloatAsState(
+        targetValue = rawBearing,
+        animationSpec = spring(dampingRatio = 0.7f, stiffness = 80f),
+        label = "compass"
+    )
+    val normalised = ((animBearing % 360) + 360) % 360
+    val cardinal = when {
+        normalised < 22.5f  || normalised >= 337.5f -> "N"
+        normalised < 67.5f  -> "NE"
+        normalised < 112.5f -> "E"
+        normalised < 157.5f -> "SE"
+        normalised < 202.5f -> "S"
+        normalised < 247.5f -> "SW"
+        normalised < 292.5f -> "W"
+        else                -> "NW"
+    }
+
+    InfoCard(modifier) {
+        MonitorCardHeader("Compass", "🧭")
+        Spacer(Modifier.height(10.dp))
+
+        androidx.compose.foundation.Canvas(
+            modifier = Modifier.fillMaxWidth().aspectRatio(1f)
+        ) {
+            val cx = size.width / 2f
+            val cy = size.height / 2f
+            val outerR = size.minDimension / 2f * 0.92f
+
+            // ── Outer ring ──
+            drawCircle(color = Color(0xFF0F0F23), radius = outerR)
+            drawCircle(color = Color(0xFF2A2A4A), radius = outerR, style = Stroke(width = 3f))
+
+            // ── Tick marks + N/S/E/W labels (rotated with bearing) ──
+            rotate(degrees = -normalised, pivot = Offset(cx, cy)) {
+                for (deg in 0 until 360 step 5) {
+                    val rad = Math.toRadians(deg.toDouble()).toFloat()
+                    val sinA = sin(rad); val cosA = cos(rad)
+                    val isMajor = deg % 10 == 0
+                    val tickOuter = outerR * 0.97f
+                    val tickInner = if (isMajor) outerR * 0.84f else outerR * 0.91f
+                    val tickColor = when {
+                        deg == 0 -> Color(0xFFFF4444)   // N = red
+                        deg % 90 == 0 -> Color.White
+                        isMajor -> Color(0xFF666688)
+                        else -> Color(0xFF333355)
+                    }
+                    drawLine(
+                        color = tickColor,
+                        start = Offset(cx + tickOuter * sinA, cy - tickOuter * cosA),
+                        end   = Offset(cx + tickInner * sinA, cy - tickInner * cosA),
+                        strokeWidth = if (deg % 90 == 0) 4f else if (isMajor) 2f else 1f
+                    )
+                }
+
+                // Cardinal letters
+                val labelR = outerR * 0.73f
+                val cardinals = listOf("N" to 0f, "E" to 90f, "S" to 180f, "W" to 270f)
+                drawIntoCanvas { canvas ->
+                    val paint = android.graphics.Paint().apply {
+                        isAntiAlias = true
+                        textAlign = android.graphics.Paint.Align.CENTER
+                        typeface = android.graphics.Typeface.DEFAULT_BOLD
+                    }
+                    cardinals.forEach { (letter, angle) ->
+                        val aRad = Math.toRadians(angle.toDouble()).toFloat()
+                        val tx = cx + labelR * sin(aRad)
+                        val ty = cy - labelR * cos(aRad)
+                        paint.textSize = outerR * 0.18f
+                        paint.color = if (letter == "N") 0xFFFF4444.toInt() else 0xFFDDDDFF.toInt()
+                        // vertical center offset
+                        canvas.nativeCanvas.drawText(letter, tx, ty + paint.textSize * 0.35f, paint)
+                    }
+                    // Degree labels at 30-degree intervals
+                    val degPaint = android.graphics.Paint().apply {
+                        isAntiAlias = true
+                        textAlign = android.graphics.Paint.Align.CENTER
+                        typeface = android.graphics.Typeface.DEFAULT
+                        textSize = outerR * 0.09f
+                        color = 0xFF888899.toInt()
+                    }
+                    val degLabelR = outerR * 0.57f
+                    for (d in listOf(30, 60, 120, 150, 210, 240, 300, 330)) {
+                        val aRad = Math.toRadians(d.toDouble()).toFloat()
+                        val tx = cx + degLabelR * sin(aRad)
+                        val ty = cy - degLabelR * cos(aRad)
+                        canvas.nativeCanvas.drawText("$d", tx, ty + degPaint.textSize * 0.35f, degPaint)
+                    }
+                }
+
+                // North needle (red)
+                drawLine(
+                    color = Color(0xFFFF4444),
+                    start = Offset(cx, cy - outerR * 0.50f),
+                    end   = Offset(cx, cy),
+                    strokeWidth = 3.5f
+                )
+                // South needle (white)
+                drawLine(
+                    color = Color(0xFFCCCCDD),
+                    start = Offset(cx, cy),
+                    end   = Offset(cx, cy + outerR * 0.44f),
+                    strokeWidth = 2.5f
+                )
+            }
+
+            // ── Static crosshair ──
+            val crossLen = outerR * 0.10f
+            drawLine(Color(0xFFFFFFFF), Offset(cx, cy - crossLen), Offset(cx, cy + crossLen), strokeWidth = 1.5f)
+            drawLine(Color(0xFFFFFFFF), Offset(cx - crossLen, cy), Offset(cx + crossLen, cy), strokeWidth = 1.5f)
+            drawCircle(Color(0xFF4F46E5), radius = 6f, center = Offset(cx, cy))
+        }
+
+        Spacer(Modifier.height(8.dp))
+        Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+            Text(
+                "${normalised.toInt()}°",
+                fontSize = 20.sp, fontWeight = FontWeight.Black, color = TextPrimary
+            )
+            Text(
+                cardinal,
+                fontSize = 20.sp, fontWeight = FontWeight.Black, color = Primary
+            )
+            Text(
+                "Magnetic North",
+                fontSize = 10.sp, color = TextMuted
+            )
+        }
     }
 }
 

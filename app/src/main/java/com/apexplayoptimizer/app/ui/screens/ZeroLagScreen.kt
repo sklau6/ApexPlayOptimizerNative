@@ -14,14 +14,14 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
 import com.apexplayoptimizer.app.data.BoostResult
+import android.app.Activity
 import com.apexplayoptimizer.app.data.DeviceOptimizer
-import com.apexplayoptimizer.app.data.InterstitialAdManager
+import com.apexplayoptimizer.app.data.RewardedInterstitialAdManager
 import com.apexplayoptimizer.app.data.OptimizeMode
 import com.apexplayoptimizer.app.data.rememberDeviceStats
 import androidx.compose.ui.platform.LocalContext
@@ -94,11 +94,8 @@ fun ZeroLagScreen(nav: NavController) {
             delay(150)
             isOptimizing     = false
             optimizationDone = true
-            // Show interstitial ad after successful boost (natural break point)
-            delay(500) // Small delay so user sees completion first
-            (ctx as? android.app.Activity)?.let { activity ->
-                InterstitialAdManager.show(activity)
-            }
+            // Show rewarded interstitial after optimization
+            (ctx as? Activity)?.let { RewardedInterstitialAdManager.show(it) }
         }
     }
 

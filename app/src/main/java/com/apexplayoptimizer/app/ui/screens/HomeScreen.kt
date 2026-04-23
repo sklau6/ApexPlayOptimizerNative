@@ -22,12 +22,13 @@ import com.apexplayoptimizer.app.R
 import com.apexplayoptimizer.app.data.DeviceOptimizer
 import com.apexplayoptimizer.app.data.BoostResult
 import com.apexplayoptimizer.app.data.OptimizeMode
+import com.apexplayoptimizer.app.data.InterstitialAdManager
 import com.apexplayoptimizer.app.data.MonetizationManager
 import com.apexplayoptimizer.app.data.UserTier
 import com.apexplayoptimizer.app.data.rememberDeviceStats
 import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.components.CircularGauge
-import com.apexplayoptimizer.app.ui.components.NativeAdView
+import com.apexplayoptimizer.app.ui.components.NativeAdCard
 import com.apexplayoptimizer.app.ui.components.RewardedAdDialog
 import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
@@ -86,6 +87,8 @@ fun HomeScreen(nav: NavController) {
             boostResult = DeviceOptimizer.runBoost(ctx, mode)
             boosting  = false
             boostDone = true
+            // Show interstitial ad after boost
+            (ctx as? android.app.Activity)?.let { InterstitialAdManager.show(it) }
             delay(6_000)
             boostDone = false
         }
@@ -405,36 +408,15 @@ fun HomeScreen(nav: NavController) {
                 }
             }
 
-            // ── Sponsored partner strip ────────────────────────────────
-            Box(
-                Modifier.fillMaxWidth().padding(horizontal = 12.dp).padding(bottom = 10.dp)
-                    .clip(RoundedCornerShape(14.dp)).background(Card)
-                    .border(1.dp, CardBorder, RoundedCornerShape(14.dp))
-                    .clickable { nav.navigate(Screen.Store.route) }
-                    .padding(12.dp)
-            ) {
-                Row(
-                    Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Text("🤝", fontSize = 16.sp)
-                        Column {
-                            Text(stringResource(R.string.partner_label), fontSize = 8.sp, fontWeight = FontWeight.ExtraBold, color = TextMuted, letterSpacing = 1.5.sp)
-                            Text(stringResource(R.string.partner_name), fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
-                        }
-                    }
-                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            Modifier.clip(RoundedCornerShape(6.dp))
-                                .background(Orange.copy(0.12f))
-                                .border(1.dp, Orange.copy(0.3f), RoundedCornerShape(6.dp))
-                                .padding(horizontal = 7.dp, vertical = 3.dp)
-                        ) { Text(stringResource(R.string.partner_discount), fontSize = 9.sp, color = Orange, fontWeight = FontWeight.Black) }
-                        Text("›", fontSize = 16.sp, color = TextMuted)
-                    }
-                }
+            // ── Native Advanced Ad (free users) ────────────────────────────────────
+            if (tier == UserTier.FREE) {
+                SectionHeader("Sponsored")
+                NativeAdCard(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp)
+                        .padding(bottom = 10.dp)
+                )
             }
 
             // ── Banner ad (free users only) ──────────────────────────────────
@@ -444,15 +426,6 @@ fun HomeScreen(nav: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 12.dp)
                         .padding(bottom = 8.dp)
-                )
-            }
-
-            // ── Native Advanced ad (free users only) ─────────────────────────
-            if (tier == UserTier.FREE) {
-                NativeAdView(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 8.dp)
                 )
             }
 

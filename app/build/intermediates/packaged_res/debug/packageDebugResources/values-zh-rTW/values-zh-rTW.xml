@@ -254,8 +254,7 @@
     <string name="premium_badge_popular">熱門</string>
     <string name="premium_cta_current">✅  目前方案</string>
     <string name="premium_cta_get_plus">⚡  取得 Plus</string>
-    <string name="premium_cta_website">🌐  透過網站訂閱</string>
-    <string name="premium_cta_website_sub">省 25%% — 免應用商店手續費</string>
+    <string name="premium_cta_get_pro">⭐  取得 Pro</string>
     <string name="premium_current_plan">目前方案：%1$s</string>
     <string name="premium_privacy">隱私政策</string>
     <string name="premium_restore">恢復購買</string>
@@ -263,9 +262,6 @@
     <string name="premium_terms">服務條款</string>
     <string name="premium_title">⭐  APEX 進階版</string>
     <string name="premium_upgrade">升級 ›</string>
-    <string name="premium_web_billing_desc">透過我們的網站訂閱，避免 15–30%% 的應用商店手續費——相同功能，更優惠的價格。訂閱將自動同步至應用程式。</string>
-    <string name="premium_web_billing_link">apexplayoptimizer.com/subscribe  ›</string>
-    <string name="premium_web_billing_title">透過網頁訂閱最多省 25%%</string>
     <string name="preset_balanced">均衡</string>
     <string name="preset_balanced_sub">最佳組合</string>
     <string name="preset_smooth">流暢</string>
@@ -353,15 +349,13 @@
     <string name="store_cancel">取消</string>
     <string name="store_go_premium_desc">無限加速 · 無廣告 · AI 教練</string>
     <string name="store_go_premium_title">⭐  升級時戴</string>
-    <string name="store_partners_desc">由職業玩家信賴的品牌專屬優惠。這是納入審查的贊助內容，絕非隨機廣告。</string>
     <string name="store_payment_secure">透過 Google Play 計費安全處理</string>
     <string name="store_purchase_success">%1$s 已加入您的帳號！</string>
     <string name="store_section_bundles">🎮  組合優惠</string>
     <string name="store_section_credits">⚡  加速點數</string>
     <string name="store_section_earn">🎥  免費獲得點數</string>
-    <string name="store_section_partners">🤝  合作商優惠</string>
     <string name="store_section_tokens">🌐  速度代幣</string>
-    <string name="store_subtitle">點數 · 代幣 · 合作優惠</string>
+    <string name="store_subtitle">點數 · 代幣 · 組合包</string>
     <string name="store_title">🛍️  商店</string>
     <string name="store_tokens_desc">使用速度代幣進行網路最优化，獲得最低延遲。</string>
     <string name="store_total">合計</string>

@@ -291,6 +291,13 @@
     <string name="lang_arabic">العربية</string>
     <string name="lang_indonesian">Bahasa Indonesia</string>
     <string name="lang_portuguese">Português (BR)</string>
+    <string name="lang_spanish">Español</string>
+    <string name="lang_french">Français</string>
+    <string name="lang_german">Deutsch</string>
+    <string name="lang_japanese">日本語</string>
+    <string name="lang_thai">ภาษาไทย</string>
+    <string name="lang_russian">Русский</string>
+    <string name="lang_korean">한국어</string>
 
     <!-- Dashboard monitor tab labels -->
     <string name="tab_overview">OVERVIEW</string>
@@ -352,22 +359,18 @@
     <string name="premium_upgrade">Upgrade ›</string>
     <string name="premium_active">✅  Active</string>
     <string name="billing_monthly">Monthly</string>
-    <string name="billing_yearly">Yearly  💰 Save 33%%</string>
+    <string name="billing_yearly">Yearly  💰 Save 33%</string>
     <string name="premium_always_free">Always free</string>
-    <string name="plan_plus_yearly_note">billed $39.99/yr · save 33%%</string>
-    <string name="plan_pro_yearly_note">billed $239.99/yr · save 33%%</string>
+    <string name="plan_plus_yearly_note">billed $39.99/yr · save 33%</string>
+    <string name="plan_pro_yearly_note">billed $239.99/yr · save 33%</string>
     <string name="premium_badge_popular">POPULAR</string>
     <string name="badge_active">ACTIVE</string>
-    <string name="premium_web_billing_title">Save up to 25%% with Web Billing</string>
-    <string name="premium_web_billing_desc">Subscribe via our website to avoid the 15–30%% app store commission — same features, better price. Your subscription syncs automatically to the app.</string>
-    <string name="premium_web_billing_link">apexplayoptimizer.com/subscribe  ›</string>
     <string name="premium_restore">Restore Purchases</string>
     <string name="premium_auto_renew">Subscriptions auto-renew unless cancelled 24h before renewal.\nCancel anytime in your account settings.</string>
     <string name="premium_terms">Terms of Service</string>
     <string name="premium_privacy">Privacy Policy</string>
     <string name="premium_cta_get_plus">⚡  Get Plus</string>
-    <string name="premium_cta_website">🌐  Subscribe via Website</string>
-    <string name="premium_cta_website_sub">Save 25%% — no app store fees</string>
+    <string name="premium_cta_get_pro">⭐  Get Pro</string>
     <string name="premium_cta_current">✅  Current Plan</string>
     <!-- Plan features: Free -->
     <string name="plan_free_f1">3 Boost Credits per day</string>
@@ -427,7 +430,7 @@
 
     <!-- Store Screen -->
     <string name="store_title">🛍️  STORE</string>
-    <string name="store_subtitle">Credits · Tokens · Partner Deals</string>
+    <string name="store_subtitle">Credits · Tokens · Bundles</string>
     <string name="store_purchase_success">%1$s added to your account!</string>
     <string name="store_section_earn">🎥  Earn Free Credits</string>
     <string name="store_ad_title">Watch a short ad</string>
@@ -442,8 +445,6 @@
     <string name="store_go_premium_title">⭐  Go Premium</string>
     <string name="store_go_premium_desc">Unlimited boosts · No ads · AI coaching</string>
     <string name="store_view_plans">View Plans ›</string>
-    <string name="store_section_partners">🤝  Partner Deals</string>
-    <string name="store_partners_desc">Exclusive deals from brands trusted by pro gamers. These are curated sponsorships — never random ads.</string>
     <string name="store_buy_btn">Buy</string>
     <string name="store_total">Total</string>
     <string name="store_payment_secure">Payment processed securely via Google Play Billing</string>

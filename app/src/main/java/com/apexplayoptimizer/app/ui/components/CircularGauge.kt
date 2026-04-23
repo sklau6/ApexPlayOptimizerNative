@@ -32,6 +32,9 @@ fun CircularGauge(
     sweepTotal: Float = 270f,
     displayValue: String = "${value.toInt()}$unit"
 ) {
+    val gaugeTrack = GaugeTrack
+    val textMuted   = TextMuted
+
     val animVal by animateFloatAsState(
         targetValue = value.coerceIn(0f, 100f),
         animationSpec = tween(900, easing = FastOutSlowInEasing),
@@ -47,7 +50,7 @@ fun CircularGauge(
             val topLeft  = Offset(inset, inset)
 
             drawArc(
-                color      = GaugeTrack,
+                color      = gaugeTrack,
                 startAngle = startAngle,
                 sweepAngle = sweepTotal,
                 useCenter  = false,
@@ -78,7 +81,7 @@ fun CircularGauge(
             Text(
                 label,
                 fontSize     = (gaugeSize.value * 0.11f).sp,
-                color        = TextMuted,
+                color        = textMuted,
                 fontWeight   = FontWeight.SemiBold,
                 letterSpacing = 0.5.sp
             )

@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
 import com.apexplayoptimizer.app.data.rememberDeviceStats
+import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.components.CircularGauge
 import com.apexplayoptimizer.app.ui.theme.*
 
@@ -235,6 +236,11 @@ fun HUDMonitorScreen(nav: NavController) {
                     }
                 }
             }
+
+            // ── Banner ad ─────────────────────────────────────────────────────────
+            BannerAdView(
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 8.dp)
+            )
         }
     }
 }

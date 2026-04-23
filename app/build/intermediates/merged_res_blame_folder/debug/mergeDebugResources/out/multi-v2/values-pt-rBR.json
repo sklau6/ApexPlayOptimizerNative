@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\a1a78c5850b92dceae748d98130b63f9\\transformed\\play-services-basement-18.3.0\\res\\values-pt-rBR\\values.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\8eb7132933409f291422316864c1e607\\transformed\\play-services-basement-18.4.0\\res\\values-pt-rBR\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -106,7 +106,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\092aa49393f6c5a635ee06e1265266f4\\transformed\\browser-1.4.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d9d8fc7fdce6ed50e214c4f766148139\\transformed\\browser-1.8.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -140,7 +140,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d2f46e653472af84c6f9593e97e60554\\transformed\\play-services-ads-23.2.0\\res\\values-pt-rBR\\values.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\100fccee7dac35af44f2fb34cb842873\\transformed\\play-services-ads-23.6.0\\res\\values-pt-rBR\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

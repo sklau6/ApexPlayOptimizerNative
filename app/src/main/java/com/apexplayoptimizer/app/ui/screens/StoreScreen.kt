@@ -1,5 +1,7 @@
 package com.apexplayoptimizer.app.ui.screens
 
+import android.app.Activity
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,15 +13,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.BillingManager
 import com.apexplayoptimizer.app.data.MonetizationManager
+import com.apexplayoptimizer.app.data.ProductIds
 import com.apexplayoptimizer.app.data.UserTier
+import com.apexplayoptimizer.app.ui.components.BannerAdView
+import com.apexplayoptimizer.app.ui.components.NativeAdCard
 import com.apexplayoptimizer.app.ui.components.RewardedAdDialog
 import com.apexplayoptimizer.app.ui.navigation.Screen
 import com.apexplayoptimizer.app.ui.theme.*
@@ -31,55 +36,73 @@ private data class StoreItem(
     val description: String,
     val price:       String,
     val color:       Color,
-    val badge:       String? = null,
-    val credits:     Int = 0,
-    val tokens:      Int = 0
-)
-
-private data class Partner(
-    val icon:    String,
-    val name:    String,
-    val tagline: String,
-    val deal:    String,
-    val color:   Color,
-    val url:     String
+    val badge:       String? = null
 )
 
 private val CREDIT_PACKS = listOf(
-    StoreItem("c5",  "⚡", "Starter Pack",  "5 Boost Credits",      "$0.99",  Primary,                credits = 5),
-    StoreItem("c20", "⚡", "Value Pack",    "20 Boost Credits",     "$2.99",  Blue,   badge = "POPULAR", credits = 20),
-    StoreItem("c50", "⚡", "Power Pack",    "50 Boost Credits",     "$5.99",  Purple,                 credits = 50),
+    StoreItem(ProductIds.CREDITS_5,  "⚡", "Starter Pack", "5 Boost Credits",  "$0.99", Color(0xFF4C8BF5)),
+    StoreItem(ProductIds.CREDITS_20, "⚡", "Value Pack",   "20 Boost Credits", "$2.99", Color(0xFF4C8BF5), badge = "POPULAR"),
+    StoreItem(ProductIds.CREDITS_50, "⚡", "Power Pack",   "50 Boost Credits", "$5.99", Color(0xFF8B5CF6)),
 )
 
 private val TOKEN_PACKS = listOf(
-    StoreItem("t10", "🌐", "Ping Lite",      "10 Speed Tokens",      "$1.49",  Teal,                    tokens = 10),
-    StoreItem("t50", "🌐", "Ping Pro",       "50 Speed Tokens",      "$4.99",  Teal,   badge = "BEST VALUE", tokens = 50),
+    StoreItem(ProductIds.TOKENS_10, "🌐", "Ping Lite", "10 Speed Tokens", "$1.49", Color(0xFF14B8A6)),
+    StoreItem(ProductIds.TOKENS_50, "🌐", "Ping Pro",  "50 Speed Tokens", "$4.99", Color(0xFF14B8A6), badge = "BEST VALUE"),
 )
 
 private val MEGA_PACK = StoreItem(
-    id = "mega", icon = "🎮", name = "Gaming Power Pack",
+    id = ProductIds.MEGA_PACK, icon = "🎮", name = "Gaming Power Pack",
     description = "50 Credits + 100 Tokens + 7-day Plus trial",
-    price = "$9.99", color = Purple, badge = "BEST DEAL",
-    credits = 50, tokens = 100
-)
-
-private val PARTNERS = listOf(
-    Partner("🖱", "ProGear",      "Elite Gaming Peripherals",     "15% off with code APEX15",   Primary, "https://progear.gg/apex"),
-    Partner("⚡", "VoltEnergy",   "Fuel Your Gaming Sessions",    "Free can with any order",    Orange,  "https://voltenergy.com/apex"),
-    Partner("🎧", "SoundCore",    "Immersive Gaming Audio",       "Free shipping on all orders", Teal,  "https://soundcore.com/apex"),
+    price = "$9.99", color = Color(0xFF8B5CF6), badge = "BEST DEAL"
 )
 
 @Composable
 fun StoreScreen(nav: NavController) {
     val ctx          = LocalContext.current
-    val uriHandler   = LocalUriHandler.current
+    val activity     = ctx as? Activity
     var credits      by remember { mutableStateOf(MonetizationManager.getCredits(ctx)) }
     var tokens       by remember { mutableStateOf(MonetizationManager.getTokens(ctx)) }
     var adViews      by remember { mutableStateOf(MonetizationManager.getDailyAdViews(ctx)) }
-    val tier                = MonetizationManager.getTier(ctx)
+    val tier         = MonetizationManager.getTier(ctx)
     var showAdDialog by remember { mutableStateOf(false) }
-    var purchaseItem by remember { mutableStateOf<StoreItem?>(null) }
     var purchaseDone by remember { mutableStateOf<String?>(null) }
+
+    // ── Google Play Billing ───────────────────────────────────────────────────
+    val billingManager = remember { BillingManager(ctx) }
+    val billingState   by billingManager.state.collectAsState()
+
+    DisposableEffect(Unit) {
+        billingManager.startConnection()
+        onDispose { billingManager.endConnection() }
+    }
+
+    LaunchedEffect(billingState.pendingMessage) {
+        billingState.pendingMessage?.let { msg ->
+            credits      = MonetizationManager.getCredits(ctx)
+            tokens       = MonetizationManager.getTokens(ctx)
+            purchaseDone = msg
+            billingManager.clearPendingMessage()
+        }
+    }
+
+    // true once billing is connected AND at least the INAPP products are loaded
+    val storeReady = billingState.connected && billingState.products.any { p ->
+        p.productId in ProductIds.ALL_INAPP
+    }
+
+    fun buyItem(item: StoreItem) {
+        if (!billingState.connected) {
+            Toast.makeText(ctx, "Not connected to Play Store. Check your internet and try again.", Toast.LENGTH_LONG).show()
+            billingManager.startConnection()
+            return
+        }
+        val details = billingManager.productDetailsFor(item.id)
+        if (activity != null && details != null) {
+            billingManager.launchPurchaseFlow(activity, details, null)
+        } else {
+            Toast.makeText(ctx, "This product is not available yet. Create it in Play Console under In-app products.", Toast.LENGTH_LONG).show()
+        }
+    }
 
     if (showAdDialog) {
         RewardedAdDialog(
@@ -91,21 +114,6 @@ fun StoreScreen(nav: NavController) {
                 adViews  = MonetizationManager.getDailyAdViews(ctx)
             },
             onDismiss = { showAdDialog = false }
-        )
-    }
-
-    // Simulated purchase confirmation dialog
-    purchaseItem?.let { item ->
-        PurchaseConfirmDialog(item = item,
-            onConfirm = {
-                MonetizationManager.addCredits(ctx, item.credits)
-                MonetizationManager.addTokens(ctx, item.tokens)
-                credits = MonetizationManager.getCredits(ctx)
-                tokens  = MonetizationManager.getTokens(ctx)
-                purchaseDone = item.name
-                purchaseItem = null
-            },
-            onDismiss = { purchaseItem = null }
         )
     }
 
@@ -139,6 +147,44 @@ fun StoreScreen(nav: NavController) {
         }
 
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 72.dp)) {
+
+            // ── Billing connection banner ─────────────────────────────────────
+            if (!storeReady) {
+                Box(
+                    Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp)
+                        .clip(RoundedCornerShape(10.dp))
+                        .background(Orange.copy(0.07f))
+                        .border(1.dp, Orange.copy(0.25f), RoundedCornerShape(10.dp))
+                        .padding(horizontal = 14.dp, vertical = 10.dp)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Text("⏳", fontSize = 16.sp)
+                        Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                            Text(
+                                if (billingState.connected) "Loading store products…" else "Connecting to Play Store…",
+                                fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = Orange
+                            )
+                            Text(
+                                "Prices will appear once the store is ready.",
+                                fontSize = 10.sp, color = TextMuted
+                            )
+                        }
+                    }
+                }
+            } else {
+                Box(
+                    Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp)
+                        .clip(RoundedCornerShape(10.dp))
+                        .background(Success.copy(0.07f))
+                        .border(1.dp, Success.copy(0.2f), RoundedCornerShape(10.dp))
+                        .padding(horizontal = 14.dp, vertical = 8.dp)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text("✅", fontSize = 14.sp)
+                        Text("Play Store connected — tap any item to purchase.", fontSize = 11.sp, color = Success)
+                    }
+                }
+            }
 
             // ── Purchase success toast ───────────────────────────────────────────
             purchaseDone?.let { name ->
@@ -215,7 +261,7 @@ fun StoreScreen(nav: NavController) {
             }
             Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), Arrangement.spacedBy(10.dp)) {
                 CREDIT_PACKS.forEach { item ->
-                    StoreItemCard(item, Modifier.weight(1f)) { purchaseItem = item }
+                    StoreItemCard(item, Modifier.weight(1f), storeReady) { buyItem(item) }
                 }
             }
 
@@ -227,14 +273,14 @@ fun StoreScreen(nav: NavController) {
             )
             Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp), Arrangement.spacedBy(10.dp)) {
                 TOKEN_PACKS.forEach { item ->
-                    StoreItemCard(item, Modifier.weight(1f)) { purchaseItem = item }
+                    StoreItemCard(item, Modifier.weight(1f), storeReady) { buyItem(item) }
                 }
                 Spacer(Modifier.weight(1f))
             }
 
             // ── Mega Pack ────────────────────────────────────────────────────────
             StoreSectionHeader(stringResource(R.string.store_section_bundles))
-            MegaPackCard(MEGA_PACK) { purchaseItem = MEGA_PACK }
+            MegaPackCard(MEGA_PACK, storeReady) { buyItem(MEGA_PACK) }
 
             // ── Go Premium CTA ───────────────────────────────────────────────────
             if (tier == UserTier.FREE) {
@@ -248,32 +294,38 @@ fun StoreScreen(nav: NavController) {
                         .padding(16.dp)
                 ) {
                     Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
-                        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Column(Modifier.weight(1f).padding(end = 12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             Text(stringResource(R.string.store_go_premium_title), fontSize = 15.sp, fontWeight = FontWeight.Black, color = Purple)
                             Text(stringResource(R.string.store_go_premium_desc), fontSize = 11.sp, color = TextSecondary)
                         }
-                        Text(stringResource(R.string.store_view_plans), fontSize = 12.sp, color = Purple, fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.store_view_plans), fontSize = 12.sp, color = Purple, fontWeight = FontWeight.Bold, maxLines = 1)
                     }
                 }
             }
 
-            // ── Partner Deals ────────────────────────────────────────────────────
-            StoreSectionHeader(stringResource(R.string.store_section_partners))
-            Text(
-                stringResource(R.string.store_partners_desc),
-                fontSize = 11.sp, color = TextMuted,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp)
+            // ── Native Advanced Ad ──────────────────────────────────────
+            Spacer(Modifier.height(4.dp))
+            NativeAdCard(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp)
+                    .clip(RoundedCornerShape(16.dp))
             )
-            PARTNERS.forEach { partner ->
-                PartnerCard(partner, uriHandler)
-                Spacer(Modifier.height(8.dp))
-            }
+            Spacer(Modifier.height(8.dp))
+
+            // ── Banner Ad ───────────────────────────────────────────────
+            BannerAdView(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp, vertical = 4.dp)
+            )
+            Spacer(Modifier.height(8.dp))
         }
     }
 }
 
 @Composable
-private fun StoreItemCard(item: StoreItem, modifier: Modifier, onBuy: () -> Unit) {
+private fun StoreItemCard(item: StoreItem, modifier: Modifier, storeReady: Boolean, onBuy: () -> Unit) {
     Box(
         modifier.clip(RoundedCornerShape(16.dp)).background(Card)
             .border(1.dp, item.color.copy(0.25f), RoundedCornerShape(16.dp))
@@ -290,85 +342,79 @@ private fun StoreItemCard(item: StoreItem, modifier: Modifier, onBuy: () -> Unit
             Text(item.name, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
             Text(item.description, fontSize = 10.sp, color = TextMuted, lineHeight = 14.sp)
             Spacer(Modifier.weight(1f))
+            val btnColor  = if (storeReady) item.color else TextMuted
+            val btnAlpha  = if (storeReady) 0.12f else 0.07f
             Box(
                 Modifier.fillMaxWidth().clip(RoundedCornerShape(8.dp))
-                    .background(item.color.copy(0.12f))
-                    .border(1.dp, item.color.copy(0.3f), RoundedCornerShape(8.dp))
-                    .clickable { onBuy() }
+                    .background(btnColor.copy(btnAlpha))
+                    .border(1.dp, btnColor.copy(if (storeReady) 0.3f else 0.15f), RoundedCornerShape(8.dp))
+                    .clickable(enabled = storeReady) { onBuy() }
                     .padding(vertical = 8.dp),
                 Alignment.Center
-            ) { Text(item.price, fontSize = 12.sp, fontWeight = FontWeight.Black, color = item.color) }
+            ) {
+                Text(
+                    if (storeReady) item.price else "⋯",
+                    fontSize = 12.sp, fontWeight = FontWeight.Black,
+                    color = if (storeReady) item.color else TextMuted
+                )
+            }
         }
     }
 }
 
 @Composable
-private fun MegaPackCard(item: StoreItem, onBuy: () -> Unit) {
+private fun MegaPackCard(item: StoreItem, storeReady: Boolean, onBuy: () -> Unit) {
+    val purple = Purple
+    val textMuted = TextMuted
     Box(
         Modifier.fillMaxWidth().padding(horizontal = 12.dp)
             .clip(RoundedCornerShape(20.dp))
-            .background(Brush.horizontalGradient(listOf(Purple.copy(0.12f), Primary.copy(0.08f))))
-            .border(2.dp, Purple.copy(0.35f), RoundedCornerShape(20.dp))
-            .padding(18.dp)
+            .background(Brush.horizontalGradient(listOf(purple.copy(0.12f), Primary.copy(0.08f))))
+            .border(2.dp, purple.copy(0.35f), RoundedCornerShape(20.dp))
+            .padding(16.dp)
     ) {
-        Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
-            Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.weight(1f)) {
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text(item.icon, fontSize = 28.sp)
-                    Column {
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.weight(1f).padding(end = 12.dp)
+                ) {
+                    Text(item.icon, fontSize = 26.sp)
+                    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                         Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                            Text(item.name, fontSize = 15.sp, fontWeight = FontWeight.Black, color = TextPrimary)
-                            Box(
-                                Modifier.clip(RoundedCornerShape(5.dp)).background(Purple).padding(horizontal = 6.dp, vertical = 2.dp)
-                            ) { Text(item.badge ?: "", fontSize = 7.sp, fontWeight = FontWeight.Black, color = Color.White) }
+                            Text(item.name, fontSize = 14.sp, fontWeight = FontWeight.Black, color = TextPrimary)
+                            if (item.badge != null) {
+                                Box(
+                                    Modifier.clip(RoundedCornerShape(5.dp)).background(purple).padding(horizontal = 6.dp, vertical = 2.dp)
+                                ) { Text(item.badge, fontSize = 7.sp, fontWeight = FontWeight.Black, color = Color.White) }
+                            }
                         }
-                        Text(item.description, fontSize = 11.sp, color = TextSecondary)
+                        Text(item.description, fontSize = 11.sp, color = TextSecondary, lineHeight = 15.sp)
                     }
                 }
-            }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text(item.price, fontSize = 20.sp, fontWeight = FontWeight.Black, color = Purple)
-                Box(
-                    Modifier.clip(RoundedCornerShape(10.dp))
-                        .background(Brush.horizontalGradient(listOf(Purple.copy(0.8f), Purple)))
-                        .clickable { onBuy() }
-                        .padding(horizontal = 14.dp, vertical = 9.dp)
-                ) { Text(stringResource(R.string.store_buy_btn), fontSize = 13.sp, fontWeight = FontWeight.Black, color = Color.White) }
-            }
-        }
-    }
-}
-
-@Composable
-private fun PartnerCard(partner: Partner, uriHandler: androidx.compose.ui.platform.UriHandler) {
-    Box(
-        Modifier.fillMaxWidth().padding(horizontal = 12.dp)
-            .clip(RoundedCornerShape(16.dp)).background(Card)
-            .border(1.dp, partner.color.copy(0.2f), RoundedCornerShape(16.dp))
-            .clickable { uriHandler.openUri(partner.url) }
-            .padding(14.dp)
-    ) {
-        Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween, Alignment.CenterVertically) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Box(
-                    Modifier.size(44.dp).clip(RoundedCornerShape(12.dp))
-                        .background(partner.color.copy(0.12f))
-                        .border(1.dp, partner.color.copy(0.25f), RoundedCornerShape(12.dp)),
-                    Alignment.Center
-                ) { Text(partner.icon, fontSize = 20.sp) }
-                Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                    Text(partner.name, fontSize = 14.sp, fontWeight = FontWeight.Bold, color = TextPrimary)
-                    Text(partner.tagline, fontSize = 11.sp, color = TextSecondary)
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Text(
+                        if (storeReady) item.price else "⋯",
+                        fontSize = 18.sp, fontWeight = FontWeight.Black,
+                        color = if (storeReady) purple else textMuted
+                    )
                     Box(
-                        Modifier.clip(RoundedCornerShape(4.dp))
-                            .background(partner.color.copy(0.1f)).padding(horizontal = 6.dp, vertical = 2.dp)
-                    ) { Text(partner.deal, fontSize = 10.sp, color = partner.color, fontWeight = FontWeight.SemiBold) }
+                        Modifier.clip(RoundedCornerShape(10.dp))
+                            .background(
+                                if (storeReady)
+                                    Brush.horizontalGradient(listOf(purple.copy(0.8f), purple))
+                                else
+                                    Brush.horizontalGradient(listOf(textMuted.copy(0.2f), textMuted.copy(0.15f)))
+                            )
+                            .clickable(enabled = storeReady) { onBuy() }
+                            .padding(horizontal = 14.dp, vertical = 9.dp)
+                    ) { Text(stringResource(R.string.store_buy_btn), fontSize = 13.sp, fontWeight = FontWeight.Black, color = if (storeReady) Color.White else textMuted) }
                 }
             }
-            Text("›", fontSize = 20.sp, color = TextMuted, fontWeight = FontWeight.Bold)
         }
     }
 }
@@ -385,47 +431,3 @@ private fun StoreSectionHeader(title: String) {
     }
 }
 
-@Composable
-private fun PurchaseConfirmDialog(item: StoreItem, onConfirm: () -> Unit, onDismiss: () -> Unit) {
-    androidx.compose.ui.window.Dialog(onDismissRequest = onDismiss) {
-        Box(
-            Modifier.fillMaxWidth()
-                .clip(RoundedCornerShape(24.dp)).background(Surface)
-                .border(1.dp, item.color.copy(0.3f), RoundedCornerShape(24.dp))
-                .padding(24.dp)
-        ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
-                Text(item.icon, fontSize = 40.sp)
-                Text(item.name, fontSize = 18.sp, fontWeight = FontWeight.Black, color = TextPrimary)
-                Text(item.description, fontSize = 12.sp, color = TextSecondary)
-                Box(Modifier.fillMaxWidth().height(1.dp).background(CardBorder))
-                Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween) {
-                    Text(stringResource(R.string.store_total), fontSize = 13.sp, color = TextMuted)
-                    Text(item.price, fontSize = 16.sp, fontWeight = FontWeight.Black, color = item.color)
-                }
-                Text(
-                    stringResource(R.string.store_payment_secure),
-                    fontSize = 10.sp, color = TextMuted,
-                    modifier = Modifier.padding(horizontal = 8.dp)
-                )
-                Row(Modifier.fillMaxWidth(), Arrangement.spacedBy(10.dp)) {
-                    Box(
-                        Modifier.weight(1f).clip(RoundedCornerShape(12.dp))
-                            .background(Card).border(1.dp, CardBorder, RoundedCornerShape(12.dp))
-                            .clickable { onDismiss() }.padding(vertical = 13.dp),
-                        Alignment.Center
-                    ) { Text(stringResource(R.string.store_cancel), fontSize = 13.sp, color = TextMuted, fontWeight = FontWeight.SemiBold) }
-                    Box(
-                        Modifier.weight(2f).clip(RoundedCornerShape(12.dp))
-                            .background(Brush.horizontalGradient(listOf(item.color.copy(0.85f), item.color)))
-                            .clickable { onConfirm() }.padding(vertical = 13.dp),
-                        Alignment.Center
-                    ) { Text(stringResource(R.string.store_buy_price, item.price), fontSize = 13.sp, fontWeight = FontWeight.Black, color = Color.White) }
-                }
-            }
-        }
-    }
-}

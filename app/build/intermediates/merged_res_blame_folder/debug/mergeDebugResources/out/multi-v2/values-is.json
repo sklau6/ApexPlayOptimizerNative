@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\8eb7132933409f291422316864c1e607\\transformed\\play-services-basement-18.4.0\\res\\values-is\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "124",
+                        "endOffsets": "319"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1968",
+                        "endColumns": "128",
+                        "endOffsets": "2092"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\98637fe2573eb67c2589fa1f966137c8\\transformed\\material3-release\\res\\values-is\\values-is.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
@@ -72,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\092aa49393f6c5a635ee06e1265266f4\\transformed\\browser-1.4.0\\res\\values-is\\values-is.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d9d8fc7fdce6ed50e214c4f766148139\\transformed\\browser-1.8.0\\res\\values-is\\values-is.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -89,7 +106,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\d2f46e653472af84c6f9593e97e60554\\transformed\\play-services-ads-23.2.0\\res\\values-is\\values.xml",
+                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\100fccee7dac35af44f2fb34cb842873\\transformed\\play-services-ads-23.6.0\\res\\values-is\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -120,23 +137,6 @@
                         "startOffsets": "994,1100,1254,1379,1488,1629,1754,1863,2097,2251,2357,2514,2640,2782,2936,3000,3063",
                         "endColumns": "105,153,124,108,140,124,108,104,153,105,156,125,141,153,63,62,78",
                         "endOffsets": "1095,1249,1374,1483,1624,1749,1858,1963,2246,2352,2509,2635,2777,2931,2995,3058,3137"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Tlau\\.gradle\\caches\\8.10.2\\transforms\\a1a78c5850b92dceae748d98130b63f9\\transformed\\play-services-basement-18.3.0\\res\\values-is\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "124",
-                        "endOffsets": "319"
-                    },
-                    "to": {
-                        "startLines": "19",
-                        "startColumns": "4",
-                        "startOffsets": "1968",
-                        "endColumns": "128",
-                        "endOffsets": "2092"
                     }
                 }
             ]

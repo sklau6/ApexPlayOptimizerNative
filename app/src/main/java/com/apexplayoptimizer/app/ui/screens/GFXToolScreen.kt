@@ -22,6 +22,7 @@ import com.apexplayoptimizer.app.R
 import com.apexplayoptimizer.app.data.DeviceOptimizer
 import com.apexplayoptimizer.app.data.GFXConfig
 import com.apexplayoptimizer.app.data.GFXConfigManager
+import com.apexplayoptimizer.app.data.InterstitialAdManager
 import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -216,6 +217,8 @@ fun GFXToolScreen(nav: NavController) {
                             }
                         } catch (_: Exception) {}
                         applied = true
+                        // Show interstitial ad after applying settings
+                        (ctx as? Activity)?.let { InterstitialAdManager.show(it) }
                     }
                     .padding(vertical = 16.dp),
                 Alignment.Center

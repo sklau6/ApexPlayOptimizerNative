@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.apexplayoptimizer.app",
+  "applicationId": "com.oppositeint.apexplayoptimizer",
   "variantName": "debug",
   "elements": []
 }

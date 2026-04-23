@@ -28,7 +28,7 @@ import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
 
 private const val TAG = "RewardedAdDialog"
-private const val AD_LOAD_TIMEOUT_MS = 10000L // 10 seconds timeout
+private const val AD_LOAD_TIMEOUT_MS = 15000L // 15 seconds timeout
 
 /**
  * Shows a real AdMob rewarded ad via [RewardedAdManager].
@@ -61,6 +61,9 @@ fun RewardedAdDialog(
             adComplete = true
             return@LaunchedEffect
         }
+
+        // Kick off a fresh preload in case it wasn't ready yet
+        RewardedAdManager.preload(ctx)
 
         // Wait for ad to be ready (with timeout)
         var waited = 0L

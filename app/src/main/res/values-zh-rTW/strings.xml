@@ -357,16 +357,12 @@
     <string name="plan_pro_yearly_note">年繳 $239.99 · 省 33%%</string>
     <string name="premium_badge_popular">熱門</string>
     <string name="badge_active">已啟用</string>
-    <string name="premium_web_billing_title">透過網頁訂閱最多省 25%%</string>
-    <string name="premium_web_billing_desc">透過我們的網站訂閱，避免 15–30%% 的應用商店手續費——相同功能，更優惠的價格。訂閱將自動同步至應用程式。</string>
-    <string name="premium_web_billing_link">apexplayoptimizer.com/subscribe  ›</string>
     <string name="premium_restore">恢復購買</string>
     <string name="premium_auto_renew">訂閱將自動續訂，除非在續訂前 24 小時取消。\n可隨時在帳號設定中取消。</string>
     <string name="premium_terms">服務條款</string>
     <string name="premium_privacy">隱私政策</string>
     <string name="premium_cta_get_plus">⚡  取得 Plus</string>
-    <string name="premium_cta_website">🌐  透過網站訂閱</string>
-    <string name="premium_cta_website_sub">省 25%% — 免應用商店手續費</string>
+    <string name="premium_cta_get_pro">⭐  取得 Pro</string>
     <string name="premium_cta_current">✅  目前方案</string>
     <!-- Plan features: Free -->
     <string name="plan_free_f1">每日 3 個加速點數</string>
@@ -426,7 +422,7 @@
 
     <!-- Store Screen -->
     <string name="store_title">🛍️  商店</string>
-    <string name="store_subtitle">點數 · 代幣 · 合作優惠</string>
+    <string name="store_subtitle">點數 · 代幣 · 組合包</string>
     <string name="store_purchase_success">%1$s 已加入您的帳號！</string>
     <string name="store_section_earn">🎥  免費獲得點數</string>
     <string name="store_ad_title">觀看短片廣告</string>
@@ -441,8 +437,6 @@
     <string name="store_go_premium_title">⭐  升級時戴</string>
     <string name="store_go_premium_desc">無限加速 · 無廣告 · AI 教練</string>
     <string name="store_view_plans">查看方案 ›</string>
-    <string name="store_section_partners">🤝  合作商優惠</string>
-    <string name="store_partners_desc">由職業玩家信賴的品牌專屬優惠。這是納入審查的贊助內容，絕非隨機廣告。</string>
     <string name="store_buy_btn">購買</string>
     <string name="store_total">合計</string>
     <string name="store_payment_secure">透過 Google Play 計費安全處理</string>

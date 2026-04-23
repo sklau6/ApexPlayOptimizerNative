@@ -16,12 +16,33 @@ import kotlinx.coroutines.withContext
 //       under Monetize → Products → In-app products / Subscriptions.
 object ProductIds {
     // Subscriptions
-    const val PLUS_MONTHLY   = "apex_plus_monthly"    // TODO: replace
-    const val PLUS_YEARLY    = "apex_plus_yearly"     // TODO: replace
-    const val PRO_MONTHLY    = "apex_pro_monthly"     // TODO: replace
-    const val PRO_YEARLY     = "apex_pro_yearly"      // TODO: replace
+    const val PLUS_MONTHLY   = "apex_plus_monthly"
+    const val PLUS_YEARLY    = "apex_plus_yearly"
+    const val PRO_MONTHLY    = "apex_pro_monthly"
+    const val PRO_YEARLY     = "apex_pro_yearly"
 
     val ALL_SUBS = listOf(PLUS_MONTHLY, PLUS_YEARLY, PRO_MONTHLY, PRO_YEARLY)
+
+    // Consumable in-app products (Store packs)
+    const val CREDITS_5  = "apex_credits_5"
+    const val CREDITS_20 = "apex_credits_20"
+    const val CREDITS_50 = "apex_credits_50"
+    const val TOKENS_10  = "apex_tokens_10"
+    const val TOKENS_50  = "apex_tokens_50"
+    const val MEGA_PACK  = "apex_mega_pack"
+
+    val ALL_INAPP = listOf(CREDITS_5, CREDITS_20, CREDITS_50, TOKENS_10, TOKENS_50, MEGA_PACK)
+
+    /** Returns (credits, tokens) granted for a consumable product. */
+    fun grant(productId: String): Pair<Int, Int> = when (productId) {
+        CREDITS_5  ->  5 to 0
+        CREDITS_20 -> 20 to 0
+        CREDITS_50 -> 50 to 0
+        TOKENS_10  ->  0 to 10
+        TOKENS_50  ->  0 to 50
+        MEGA_PACK  -> 50 to 100
+        else       ->  0 to 0
+    }
 }
 
 private const val TAG = "BillingManager"
@@ -88,23 +109,18 @@ class BillingManager(private val ctx: Context) {
     // ── Load products ─────────────────────────────────────────────────────────
 
     private suspend fun loadProducts() {
-        val params = QueryProductDetailsParams.newBuilder()
-            .setProductList(
-                ProductIds.ALL_SUBS.map { id ->
-                    QueryProductDetailsParams.Product.newBuilder()
-                        .setProductId(id)
-                        .setProductType(BillingClient.ProductType.SUBS)
-                        .build()
-                }
+        fun buildParams(ids: List<String>, type: String) =
+            QueryProductDetailsParams.newBuilder().setProductList(
+                ids.map { QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(it).setProductType(type).build() }
             ).build()
 
-        val result = withContext(Dispatchers.IO) { billingClient.queryProductDetails(params) }
-        if (result.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-            _state.value = _state.value.copy(products = result.productDetailsList ?: emptyList())
-            Log.d(TAG, "Loaded ${result.productDetailsList?.size} products")
-        } else {
-            Log.w(TAG, "queryProductDetails failed: ${result.billingResult.debugMessage}")
-        }
+        val subsResult  = withContext(Dispatchers.IO) { billingClient.queryProductDetails(buildParams(ProductIds.ALL_SUBS,   BillingClient.ProductType.SUBS))  }
+        val inappResult = withContext(Dispatchers.IO) { billingClient.queryProductDetails(buildParams(ProductIds.ALL_INAPP,  BillingClient.ProductType.INAPP)) }
+        val all = (subsResult.productDetailsList  ?: emptyList()) +
+                  (inappResult.productDetailsList ?: emptyList())
+        _state.value = _state.value.copy(products = all)
+        Log.d(TAG, "Loaded ${all.size} products (subs + inapp)")
     }
 
     // ── Restore purchases ─────────────────────────────────────────────────────
@@ -124,10 +140,10 @@ class BillingManager(private val ctx: Context) {
 
     // ── Launch purchase flow ──────────────────────────────────────────────────
 
-    fun launchPurchaseFlow(activity: Activity, productDetails: ProductDetails, offerToken: String) {
+    fun launchPurchaseFlow(activity: Activity, productDetails: ProductDetails, offerToken: String?) {
         val productDetailsParams = BillingFlowParams.ProductDetailsParams.newBuilder()
             .setProductDetails(productDetails)
-            .setOfferToken(offerToken)
+            .also { if (offerToken != null) it.setOfferToken(offerToken) }
             .build()
         val flowParams = BillingFlowParams.newBuilder()
             .setProductDetailsParamsList(listOf(productDetailsParams))
@@ -142,27 +158,50 @@ class BillingManager(private val ctx: Context) {
 
     private suspend fun handlePurchase(purchase: Purchase) {
         if (purchase.purchaseState != Purchase.PurchaseState.PURCHASED) return
+        val productId = purchase.products.firstOrNull() ?: return
 
-        // Acknowledge so Google doesn't refund after 3 days
-        if (!purchase.isAcknowledged) {
-            val ackParams = AcknowledgePurchaseParams.newBuilder()
-                .setPurchaseToken(purchase.purchaseToken)
-                .build()
-            val ackResult = withContext(Dispatchers.IO) { billingClient.acknowledgePurchase(ackParams) }
-            if (ackResult.responseCode != BillingClient.BillingResponseCode.OK) {
-                Log.w(TAG, "Acknowledge failed: ${ackResult.debugMessage}")
-                return
+        if (productId in ProductIds.ALL_INAPP) {
+            // Consumable — consume so it can be re-purchased, then grant rewards
+            val consumeResult = withContext(Dispatchers.IO) {
+                billingClient.consumePurchase(
+                    ConsumeParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
+                )
             }
+            if (consumeResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                val (credits, tokens) = ProductIds.grant(productId)
+                if (credits > 0) MonetizationManager.addCredits(ctx, credits)
+                if (tokens  > 0) MonetizationManager.addTokens(ctx, tokens)
+                val msg = buildString {
+                    if (credits > 0) append("+$credits Boost Credits")
+                    if (tokens  > 0) { if (isNotEmpty()) append(" · "); append("+$tokens Speed Tokens") }
+                    append(" added!")
+                }
+                _state.value = _state.value.copy(pendingMessage = msg)
+                Log.d(TAG, "Consumable granted: $msg")
+            } else {
+                Log.w(TAG, "Consume failed: ${consumeResult.billingResult.debugMessage}")
+            }
+        } else {
+            // Subscription — acknowledge so Google doesn't refund after 3 days
+            if (!purchase.isAcknowledged) {
+                val ackResult = withContext(Dispatchers.IO) {
+                    billingClient.acknowledgePurchase(
+                        AcknowledgePurchaseParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
+                    )
+                }
+                if (ackResult.responseCode != BillingClient.BillingResponseCode.OK) {
+                    Log.w(TAG, "Acknowledge failed: ${ackResult.debugMessage}")
+                    return
+                }
+            }
+            applyEntitlement(purchase)
+            val current = _state.value.activePurchases.toMutableList()
+            if (current.none { it.purchaseToken == purchase.purchaseToken }) current.add(purchase)
+            _state.value = _state.value.copy(
+                activePurchases = current,
+                pendingMessage  = "Purchase successful! Your plan has been activated."
+            )
         }
-
-        applyEntitlement(purchase)
-
-        val current = _state.value.activePurchases.toMutableList()
-        if (current.none { it.purchaseToken == purchase.purchaseToken }) current.add(purchase)
-        _state.value = _state.value.copy(
-            activePurchases = current,
-            pendingMessage  = "Purchase successful! Your plan has been activated."
-        )
     }
 
     // ── Map purchase → UserTier and persist ───────────────────────────────────

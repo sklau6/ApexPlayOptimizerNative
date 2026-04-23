@@ -4,15 +4,15 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.apexplayoptimizer.app",
+  "applicationId": "com.oppositeint.apexplayoptimizer",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0",
+      "versionCode": 5,
+      "versionName": "1.0.2",
       "outputFile": "resources-debug.ap_"
     }
   ],

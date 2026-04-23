@@ -1,26 +1,26 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-30:12
-MERGED from [com.google.android.gms:play-services-ads:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2f46e653472af84c6f9593e97e60554\transformed\play-services-ads-23.2.0\AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.browser:browser:1.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\092aa49393f6c5a635ee06e1265266f4\transformed\browser-1.4.0\AndroidManifest.xml:17:1-24:12
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:1-32:12
+MERGED from [com.google.android.gms:play-services-ads:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\100fccee7dac35af44f2fb34cb842873\transformed\play-services-ads-23.6.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d9d8fc7fdce6ed50e214c4f766148139\transformed\browser-1.8.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.webkit:webkit:1.11.0-alpha02] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\cfb3940939abdde2da198b162dfc62ba\transformed\webkit-1.11.0-alpha02\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:17:1-95:12
-MERGED from [com.google.android.gms:play-services-ads-base:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1b75e910ed1c68ca7cd88f141cb6a200\transformed\play-services-ads-base-23.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:17:1-112:12
+MERGED from [com.google.android.gms:play-services-ads-base:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8e31d47d9b9118ef72fef430749556fb\transformed\play-services-ads-base-23.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.android.gms:play-services-appset:16.0.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0b6363f93ab542a8f67ed5d328a139df\transformed\play-services-appset-16.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.billingclient:billing-ktx:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\6920fbf2fd8aac6fb977071474a9fcd9\transformed\billing-ktx-7.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.billingclient:billing:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d49fd89b1b50e80e275c28ebc96167db\transformed\billing-7.0.0\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.gms:play-services-location:19.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\579ef26d7fdd530d06e56d7cf8da4c21\transformed\play-services-location-19.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:16:1-24:12
-MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\539a773ac5fac33315a166de3fa8a0ee\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ae7585b790ba5f75385eae58c48c7eba\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c0f1700d4dd811e405fc3f7359277856\transformed\user-messaging-platform-2.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.ump:user-messaging-platform:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5e584d4f86f4e8680ac62f71b7153405\transformed\user-messaging-platform-3.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\70dbef97acb44fe54acaa7cc10c023e6\transformed\play-services-measurement-base-20.1.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\72da16b6d59e2b281e7b859e46f6f33b\transformed\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\98637fe2573eb67c2589fa1f966137c8\transformed\material3-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\b6b71124dfdfc60a1ab7a117016c3a78\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5e5996d731bf031b9655dd7bb2175ffa\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
@@ -47,9 +47,7 @@ MERGED from [androidx.compose.ui:ui-test-manifest:1.6.7] C:\Users\Tlau\.gradle\c
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\875a97bca433bd89815688c9129c05bc\transformed\ui-tooling-release\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.activity:activity-compose:1.9.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\12032662ea527d5339d1e0f7609f006b\transformed\activity-compose-1.9.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\496ba99f6ca745de76abf5bf30ec887a\transformed\work-runtime-2.7.0\AndroidManifest.xml:17:1-145:12
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2300381f748954a8f818690dd185115\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bd78d63ca6d9d8695cdaca418faa6b6e\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bf0ad415fc1cc469f8851a55d5fd826f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1fb2865d6058b537f38a5115f7270c35\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:17:1-22:12
@@ -61,6 +59,8 @@ MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Tlau\.gradle\caches\
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\7fdc7654a366001bf65b1032a6773e28\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c987b1b2f50c37527832ad030e50311e\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0a8bf78be7711cb09dff98091ca2b264\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\720fa0df8bfe9b00799c5aad32ba7613\transformed\lifecycle-viewmodel-compose-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\2de20cfde93a180820427285ce7ed7a0\transformed\ui-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\74c1851f6c3c581e069165f3b41d4de3\transformed\foundation-release\AndroidManifest.xml:2:1-7:12
@@ -76,15 +76,15 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Tlau\.g
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\88c5ec59433031da346a0747545d25f1\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5ef42c3eb305c3a2d155f2f530827d31\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5cd5c1b1714ff0749d9a0df4c2c2f16d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0ac32231e430cb177001d9ad05d022dd\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\37393f59325fa17345b2735b56e3d443\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\4c6a9c26d482bd0533b6fa492a59fcb6\transformed\transport-api-3.0.0\AndroidManifest.xml:15:1-22:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ce55b0800586826098c3e63e77f53a99\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1f4d1acd6a168b3f29341944b394345a\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d0bc820f919394f23019b3fdca77a21d\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
@@ -98,8 +98,8 @@ MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Tlau\.g
 		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:3:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
@@ -108,8 +108,8 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Us
 		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:4:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:24:5-79
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\496ba99f6ca745de76abf5bf30ec887a\transformed\work-runtime-2.7.0\AndroidManifest.xml:26:5-79
@@ -136,13 +136,23 @@ uses-permission#android.permission.ACCESS_NOTIFICATION_POLICY
 ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:7:5-85
 	android:name
 		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:7:22-82
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:8:22-76
 application
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:8:5-29:19
-INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:8:5-29:19
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:53:5-93:19
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:53:5-93:19
-MERGED from [com.google.android.gms:play-services-ads-base:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1b75e910ed1c68ca7cd88f141cb6a200\transformed\play-services-ads-base-23.2.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-ads-base:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1b75e910ed1c68ca7cd88f141cb6a200\transformed\play-services-ads-base-23.2.0\AndroidManifest.xml:7:5-20
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:9:5-31:19
+INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:9:5-31:19
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:70:5-110:19
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:70:5-110:19
+MERGED from [com.google.android.gms:play-services-ads-base:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8e31d47d9b9118ef72fef430749556fb\transformed\play-services-ads-base-23.6.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8e31d47d9b9118ef72fef430749556fb\transformed\play-services-ads-base-23.6.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
 MERGED from [com.google.android.gms:play-services-appset:16.0.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0b6363f93ab542a8f67ed5d328a139df\transformed\play-services-appset-16.0.1\AndroidManifest.xml:7:5-20
@@ -153,14 +163,14 @@ MERGED from [com.google.android.gms:play-services-location:19.0.0] C:\Users\Tlau
 MERGED from [com.google.android.gms:play-services-location:19.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\579ef26d7fdd530d06e56d7cf8da4c21\transformed\play-services-location-19.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\539a773ac5fac33315a166de3fa8a0ee\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\539a773ac5fac33315a166de3fa8a0ee\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ae7585b790ba5f75385eae58c48c7eba\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ae7585b790ba5f75385eae58c48c7eba\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\70dbef97acb44fe54acaa7cc10c023e6\transformed\play-services-measurement-base-20.1.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\70dbef97acb44fe54acaa7cc10c023e6\transformed\play-services-measurement-base-20.1.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\72da16b6d59e2b281e7b859e46f6f33b\transformed\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\72da16b6d59e2b281e7b859e46f6f33b\transformed\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d6e79169da35795575ef274c47c7474a\transformed\ui-test-manifest-1.6.7\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d6e79169da35795575ef274c47c7474a\transformed\ui-test-manifest-1.6.7\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\875a97bca433bd89815688c9129c05bc\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
@@ -177,74 +187,76 @@ MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\T
 MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\2fd8da112c8d40d7d5f0da3468ea225c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5cd5c1b1714ff0749d9a0df4c2c2f16d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5cd5c1b1714ff0749d9a0df4c2c2f16d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:24:5-29:19
-MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:24:5-29:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
 		INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:14:9-55
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:16:9-55
+	android:name
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:10:9-44
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:15:9-17:70
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:17:9-19:70
 	android:value
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:17:13-67
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:19:13-67
 	android:name
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:16:13-69
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:18:13-69
 activity#com.apexplayoptimizer.app.MainActivity
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:18:9-28:20
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:20:9-30:20
 	android:label
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:21:13-45
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:23:13-45
 	android:windowSoftInputMode
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:23:13-55
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:25:13-55
 	android:exported
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:20:13-36
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:22:13-36
 	android:theme
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:22:13-59
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:24:13-59
 	android:name
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:19:13-41
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:21:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:26:13-29:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml:28:27-74
 uses-sdk
 INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml
-MERGED from [com.google.android.gms:play-services-ads:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2f46e653472af84c6f9593e97e60554\transformed\play-services-ads-23.2.0\AndroidManifest.xml:21:5-23:52
-MERGED from [com.google.android.gms:play-services-ads:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2f46e653472af84c6f9593e97e60554\transformed\play-services-ads-23.2.0\AndroidManifest.xml:21:5-23:52
-MERGED from [androidx.browser:browser:1.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\092aa49393f6c5a635ee06e1265266f4\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.browser:browser:1.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\092aa49393f6c5a635ee06e1265266f4\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-ads:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\100fccee7dac35af44f2fb34cb842873\transformed\play-services-ads-23.6.0\AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-ads:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\100fccee7dac35af44f2fb34cb842873\transformed\play-services-ads-23.6.0\AndroidManifest.xml:21:5-23:52
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d9d8fc7fdce6ed50e214c4f766148139\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d9d8fc7fdce6ed50e214c4f766148139\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.webkit:webkit:1.11.0-alpha02] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\cfb3940939abdde2da198b162dfc62ba\transformed\webkit-1.11.0-alpha02\AndroidManifest.xml:5:5-44
 MERGED from [androidx.webkit:webkit:1.11.0-alpha02] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\cfb3940939abdde2da198b162dfc62ba\transformed\webkit-1.11.0-alpha02\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-ads-base:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1b75e910ed1c68ca7cd88f141cb6a200\transformed\play-services-ads-base-23.2.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-ads-base:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1b75e910ed1c68ca7cd88f141cb6a200\transformed\play-services-ads-base-23.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8e31d47d9b9118ef72fef430749556fb\transformed\play-services-ads-base-23.6.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8e31d47d9b9118ef72fef430749556fb\transformed\play-services-ads-base-23.6.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-appset:16.0.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0b6363f93ab542a8f67ed5d328a139df\transformed\play-services-appset-16.0.1\AndroidManifest.xml:5:5-44
@@ -257,18 +269,18 @@ MERGED from [com.google.android.gms:play-services-location:19.0.0] C:\Users\Tlau
 MERGED from [com.google.android.gms:play-services-location:19.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\579ef26d7fdd530d06e56d7cf8da4c21\transformed\play-services-location-19.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\539a773ac5fac33315a166de3fa8a0ee\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\539a773ac5fac33315a166de3fa8a0ee\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ae7585b790ba5f75385eae58c48c7eba\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ae7585b790ba5f75385eae58c48c7eba\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c0f1700d4dd811e405fc3f7359277856\transformed\user-messaging-platform-2.2.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c0f1700d4dd811e405fc3f7359277856\transformed\user-messaging-platform-2.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5e584d4f86f4e8680ac62f71b7153405\transformed\user-messaging-platform-3.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5e584d4f86f4e8680ac62f71b7153405\transformed\user-messaging-platform-3.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\70dbef97acb44fe54acaa7cc10c023e6\transformed\play-services-measurement-base-20.1.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\70dbef97acb44fe54acaa7cc10c023e6\transformed\play-services-measurement-base-20.1.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\72da16b6d59e2b281e7b859e46f6f33b\transformed\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\72da16b6d59e2b281e7b859e46f6f33b\transformed\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\98637fe2573eb67c2589fa1f966137c8\transformed\material3-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\98637fe2573eb67c2589fa1f966137c8\transformed\material3-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\b6b71124dfdfc60a1ab7a117016c3a78\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
@@ -321,12 +333,8 @@ MERGED from [androidx.activity:activity-compose:1.9.0] C:\Users\Tlau\.gradle\cac
 MERGED from [androidx.activity:activity-compose:1.9.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\12032662ea527d5339d1e0f7609f006b\transformed\activity-compose-1.9.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\496ba99f6ca745de76abf5bf30ec887a\transformed\work-runtime-2.7.0\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.work:work-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\496ba99f6ca745de76abf5bf30ec887a\transformed\work-runtime-2.7.0\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2300381f748954a8f818690dd185115\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2300381f748954a8f818690dd185115\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bd78d63ca6d9d8695cdaca418faa6b6e\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bd78d63ca6d9d8695cdaca418faa6b6e\transformed\lifecycle-service-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bf0ad415fc1cc469f8851a55d5fd826f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
@@ -349,6 +357,10 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\Tlau\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c987b1b2f50c37527832ad030e50311e\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0a8bf78be7711cb09dff98091ca2b264\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0a8bf78be7711cb09dff98091ca2b264\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\9a4f572be143f1c0b17f31e7d7e20d00\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d8de9fc30ce210caa890dd8956c4636c\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\720fa0df8bfe9b00799c5aad32ba7613\transformed\lifecycle-viewmodel-compose-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\720fa0df8bfe9b00799c5aad32ba7613\transformed\lifecycle-viewmodel-compose-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\2de20cfde93a180820427285ce7ed7a0\transformed\ui-release\AndroidManifest.xml:5:5-44
@@ -379,24 +391,24 @@ MERGED from [androidx.compose.runtime:runtime-android:1.6.7] C:\Users\Tlau\.grad
 MERGED from [androidx.compose.runtime:runtime-android:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5ef42c3eb305c3a2d155f2f530827d31\transformed\runtime-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5cd5c1b1714ff0749d9a0df4c2c2f16d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\5cd5c1b1714ff0749d9a0df4c2c2f16d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0ac32231e430cb177001d9ad05d022dd\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0ac32231e430cb177001d9ad05d022dd\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\37393f59325fa17345b2735b56e3d443\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\37393f59325fa17345b2735b56e3d443\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\4c6a9c26d482bd0533b6fa492a59fcb6\transformed\transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\4c6a9c26d482bd0533b6fa492a59fcb6\transformed\transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\3ddcc2e754fb3995679e2719c18422cd\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\87d730eb666d6e0fc3da52cd8bdc77aa\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ce55b0800586826098c3e63e77f53a99\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\ce55b0800586826098c3e63e77f53a99\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\1f4d1acd6a168b3f29341944b394345a\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
@@ -404,128 +416,134 @@ MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Tlau\.gradle\caches\8.10.2\t
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d0bc820f919394f23019b3fdca77a21d\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d0bc820f919394f23019b3fdca77a21d\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 	tools:overrideLibrary
-		ADDED from [com.google.android.gms:play-services-ads:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d2f46e653472af84c6f9593e97e60554\transformed\play-services-ads-23.2.0\AndroidManifest.xml:23:9-49
+		ADDED from [com.google.android.gms:play-services-ads:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\100fccee7dac35af44f2fb34cb842873\transformed\play-services-ads-23.6.0\AndroidManifest.xml:23:9-49
 	android:targetSdkVersion
 		INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\Tlau\src\ApexPlayOptimizerNative\app\src\main\AndroidManifest.xml
-uses-permission#com.google.android.gms.permission.AD_ID
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\91bcbac1520cf682504801ea4c1995ce\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\caf2a8eb28e7ed6b0e392e9e8b1a140a\transformed\play-services-measurement-sdk-api-20.1.2\AndroidManifest.xml:26:5-79
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:26:22-76
 uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:27:5-82
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:27:5-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:27:22-79
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:27:22-79
 uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:28:5-88
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:28:5-88
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:28:22-85
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:28:22-85
 uses-permission#android.permission.ACCESS_ADSERVICES_TOPICS
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:29:5-83
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:29:5-83
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:29:22-80
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:29:22-80
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:30:5-32:31
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:30:5-32:31
 REJECTED from [androidx.work:work-runtime:2.7.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\496ba99f6ca745de76abf5bf30ec887a\transformed\work-runtime-2.7.0\AndroidManifest.xml:27:5-81
 	tools:node
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:32:9-28
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:32:9-28
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:31:9-65
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:31:9-65
 queries
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:35:5-51:15
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:35:5-68:15
 MERGED from [com.android.billingclient:billing:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d49fd89b1b50e80e275c28ebc96167db\transformed\billing-7.0.0\AndroidManifest.xml:12:5-16:15
 MERGED from [com.android.billingclient:billing:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d49fd89b1b50e80e275c28ebc96167db\transformed\billing-7.0.0\AndroidManifest.xml:12:5-16:15
 intent#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:scheme:https
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:38:9-44:18
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:38:9-44:18
 action#android.intent.action.VIEW
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:39:13-65
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:39:13-65
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:39:21-62
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:39:21-62
 category#android.intent.category.BROWSABLE
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:41:13-74
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:41:13-74
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:41:23-71
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:41:23-71
 data
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:43:13-44
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:43:13-44
 	android:scheme
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:43:19-41
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:43:19-41
 intent#action:name:android.support.customtabs.action.CustomTabsService
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:47:9-49:18
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:47:9-49:18
 action#android.support.customtabs.action.CustomTabsService
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:48:13-90
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:48:13-90
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:48:21-87
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:48:21-87
+intent#action:name:android.intent.action.INSERT+data:mimeType:vnd.android.cursor.dir/event
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:52:9-56:18
+action#android.intent.action.INSERT
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:53:13-67
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:53:21-64
+intent#action:name:android.intent.action.VIEW+data:scheme:sms
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:57:9-61:18
+intent#action:name:android.intent.action.DIAL+data:path:tel:
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:62:9-66:18
+action#android.intent.action.DIAL
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:63:13-65
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:63:21-62
 activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:56:9-61:43
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:73:9-78:43
 	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:59:13-37
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:76:13-37
 	tools:ignore
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:61:13-40
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:78:13-40
 	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:58:13-122
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:75:13-122
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:60:13-61
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:77:13-61
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:57:13-65
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:74:13-65
 provider#com.google.android.gms.ads.MobileAdsInitProvider
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:63:9-68:43
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:80:9-85:43
 	android:authorities
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:65:13-73
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:82:13-73
 	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:66:13-37
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:83:13-37
 	tools:ignore
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:68:13-40
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:85:13-40
 	android:initOrder
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:67:13-36
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:84:13-36
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:64:13-76
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:81:13-76
 service#com.google.android.gms.ads.AdService
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:70:9-74:43
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:87:9-91:43
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:72:13-35
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:89:13-35
 	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:73:13-37
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:90:13-37
 	tools:ignore
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:74:13-40
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:91:13-40
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:71:13-64
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:88:13-64
 activity#com.google.android.gms.ads.OutOfContextTestingActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:76:9-80:43
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:93:9-97:43
 	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:79:13-37
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:96:13-37
 	tools:ignore
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:80:13-40
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:97:13-40
 	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:78:13-122
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:95:13-122
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:77:13-82
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:94:13-82
 activity#com.google.android.gms.ads.NotificationHandlerActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:81:9-88:43
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:98:9-105:43
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:83:13-46
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:100:13-46
 	android:launchMode
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:85:13-44
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:102:13-44
 	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:84:13-37
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:101:13-37
 	tools:ignore
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:88:13-40
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:105:13-40
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:87:13-72
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:104:13-72
 	android:taskAffinity
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:86:13-36
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:103:13-36
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:82:13-82
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:99:13-82
 property#android.adservices.AD_SERVICES_CONFIG
-ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:90:9-92:62
+ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:107:9-109:62
 	android:resource
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:92:13-59
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:109:13-59
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:23.2.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f637bd8e48c3aa2d419d9a810f54b36e\transformed\play-services-ads-lite-23.2.0\AndroidManifest.xml:91:13-65
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.6.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\0fe1035bbfd66c5637538b2a050bcd25\transformed\play-services-ads-lite-23.6.0\AndroidManifest.xml:108:13-65
 uses-permission#com.android.vending.BILLING
 ADDED from [com.android.billingclient:billing-ktx:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\6920fbf2fd8aac6fb977071474a9fcd9\transformed\billing-ktx-7.0.0\AndroidManifest.xml:9:5-67
 MERGED from [com.android.billingclient:billing:7.0.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d49fd89b1b50e80e275c28ebc96167db\transformed\billing-7.0.0\AndroidManifest.xml:10:5-67
@@ -573,11 +591,11 @@ ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gra
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\96d3913c40ca45bc979f8eeba693f2c2\transformed\play-services-base-18.3.0\AndroidManifest.xml:20:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\a1a78c5850b92dceae748d98130b63f9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\8eb7132933409f291422316864c1e607\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
 activity#androidx.activity.ComponentActivity
 ADDED from [androidx.compose.ui:ui-test-manifest:1.6.7] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\d6e79169da35795575ef274c47c7474a\transformed\ui-test-manifest-1.6.7\AndroidManifest.xml:23:9-25:39
 	android:exported
@@ -834,7 +852,7 @@ ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\trans
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-permission#com.apexplayoptimizer.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.oppositeint.apexplayoptimizer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
@@ -844,7 +862,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-uses-permission#com.apexplayoptimizer.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.oppositeint.apexplayoptimizer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\495411c6119017cc9c39592f256a055c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
@@ -854,14 +872,6 @@ ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Tl
 		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\2fd8da112c8d40d7d5f0da3468ea225c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
 	android:name
 		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\2fd8da112c8d40d7d5f0da3468ea225c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
-service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-	android:exported
-		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-	android:directBootAware
-		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-	android:name
-		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
 	android:value
@@ -904,6 +914,14 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\c794e9316a810cfc24bad7ed91a33a36\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.5] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\f7d74657cb4928140feee25e40b1c0f6\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
 ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\bc1a60b4806682ed677a14016a267cd4\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Tlau\.gradle\caches\8.10.2\transforms\aafdc7f85be33e731dac443a1bea355e\transformed\transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40

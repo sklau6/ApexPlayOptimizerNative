@@ -18,7 +18,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import android.app.Activity
+import androidx.compose.ui.platform.LocalContext
 import com.apexplayoptimizer.app.R
+import com.apexplayoptimizer.app.data.InterstitialAdManager
+import com.apexplayoptimizer.app.ui.components.BannerAdView
 import com.apexplayoptimizer.app.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -31,13 +35,13 @@ private data class Preset(
 )
 
 private val PRESETS = listOf(
-    Preset("JONATHAN",    "🏆", "T1",     listOf(100, 95, 90, 85, 80, 75, 70), Primary),
-    Preset("SCOUT",       "🎯", "Team IND",listOf(95, 100, 88, 82, 76, 68, 60), Orange),
-    Preset("MAVI",        "⚡", "BTR",    listOf(88,  92, 86, 80, 74, 66, 58), Blue),
-    Preset("MORTAL",      "🔥", "STE",    listOf(90,  88, 84, 78, 72, 64, 56), Purple),
-    Preset("NEYOO",       "🚀", "GodLike",listOf(85,  90, 82, 76, 70, 62, 54), Yellow),
-    Preset("ZGOD",        "💀", "GodLike",listOf(80,  86, 78, 72, 66, 60, 52), Danger),
-    Preset("CUSTOM",      "🎮", "You",    listOf(86,  91, 84, 93, 76, 68, 55), TextSecondary),
+    Preset("JONATHAN",    "🏆", "T1",     listOf(100, 95, 90, 85, 80, 75, 70), Color(0xFF4C8BF5)),
+    Preset("SCOUT",       "🎯", "Team IND",listOf(95, 100, 88, 82, 76, 68, 60), Color(0xFFF97316)),
+    Preset("MAVI",        "⚡", "BTR",    listOf(88,  92, 86, 80, 74, 66, 58), Color(0xFF4C8BF5)),
+    Preset("MORTAL",      "🔥", "STE",    listOf(90,  88, 84, 78, 72, 64, 56), Color(0xFF8B5CF6)),
+    Preset("NEYOO",       "🚀", "GodLike",listOf(85,  90, 82, 76, 70, 62, 54), Color(0xFFF59E0B)),
+    Preset("ZGOD",        "💀", "GodLike",listOf(80,  86, 78, 72, 66, 60, 52), Color(0xFFEF4444)),
+    Preset("CUSTOM",      "🎮", "You",    listOf(86,  91, 84, 93, 76, 68, 55), Color(0xFF8B9DC3)),
 )
 
 @Composable
@@ -58,6 +62,7 @@ fun SensitivityScreen(nav: NavController) {
     var haptic         by remember { mutableStateOf(false) }
     var fingerprint    by remember { mutableStateOf(true) }
 
+    val ctx = LocalContext.current
     val preset = PRESETS[selectedPreset]
 
     LaunchedEffect(activated) { if (activated) { delay(2500); activated = false } }
@@ -202,7 +207,12 @@ fun SensitivityScreen(nav: NavController) {
                     .scale(buttonScale)
                     .clip(RoundedCornerShape(12.dp))
                     .background(if (activated) Primary else Orange)
-                    .clickable { activated = true }.padding(vertical = 16.dp),
+                    .clickable {
+                        if (!activated) {
+                            activated = true
+                            (ctx as? Activity)?.let { InterstitialAdManager.show(it) }
+                        }
+                    }.padding(vertical = 16.dp),
                 Alignment.Center
             ) {
                 Text(
@@ -210,6 +220,11 @@ fun SensitivityScreen(nav: NavController) {
                     fontSize = 14.sp, fontWeight = FontWeight.Black, color = Color.Black, letterSpacing = 2.sp
                 )
             }
+
+            // ── Banner ad ─────────────────────────────────────────────────────────
+            BannerAdView(
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 8.dp)
+            )
         }
     }
 }
