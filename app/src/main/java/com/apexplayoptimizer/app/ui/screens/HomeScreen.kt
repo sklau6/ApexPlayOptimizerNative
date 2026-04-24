@@ -298,7 +298,18 @@ fun HomeScreen(nav: NavController) {
                         else if (boosting) Brush.horizontalGradient(listOf(Orange.copy(0.7f), Orange))
                         else Brush.horizontalGradient(listOf(Primary.copy(0.85f), Blue))
                     )
-                    .clickable { if (!boosting) { boosting = true; boostDone = false } }
+                    .clickable { 
+                        if (!boosting) { 
+                            if (MonetizationManager.useCredit(ctx)) {
+                                credits = MonetizationManager.getCredits(ctx)
+                                boosting = true
+                                boostDone = false 
+                            } else {
+                                android.widget.Toast.makeText(ctx, "Out of Boost Credits!", android.widget.Toast.LENGTH_SHORT).show()
+                                nav.navigate(Screen.Store.route)
+                            }
+                        } 
+                    }
                     .padding(vertical = 16.dp),
                 Alignment.Center
             ) {

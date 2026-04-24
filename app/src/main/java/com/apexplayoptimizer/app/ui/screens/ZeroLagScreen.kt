@@ -267,7 +267,17 @@ fun ZeroLagScreen(nav: NavController) {
                 Modifier.fillMaxWidth().padding(horizontal = 12.dp)
                     .clip(RoundedCornerShape(12.dp))
                     .background(if (selectedMode == "extreme") Danger else current.color)
-                    .clickable { if (!isOptimizing) { optimizationDone = false; isOptimizing = true } }
+                    .clickable { 
+                        if (!isOptimizing) { 
+                            if (com.apexplayoptimizer.app.data.MonetizationManager.useToken(ctx)) {
+                                optimizationDone = false
+                                isOptimizing = true 
+                            } else {
+                                android.widget.Toast.makeText(ctx, "Out of Speed Tokens!", android.widget.Toast.LENGTH_SHORT).show()
+                                nav.navigate("store")
+                            }
+                        } 
+                    }
                     .padding(vertical = 16.dp),
                 Alignment.Center
             ) {

@@ -171,9 +171,13 @@ class BillingManager(private val ctx: Context) {
                 val (credits, tokens) = ProductIds.grant(productId)
                 if (credits > 0) MonetizationManager.addCredits(ctx, credits)
                 if (tokens  > 0) MonetizationManager.addTokens(ctx, tokens)
+                if (productId == ProductIds.MEGA_PACK) {
+                    MonetizationManager.startPlusTrial(ctx)
+                }
                 val msg = buildString {
                     if (credits > 0) append("+$credits Boost Credits")
                     if (tokens  > 0) { if (isNotEmpty()) append(" · "); append("+$tokens Speed Tokens") }
+                    if (productId == ProductIds.MEGA_PACK) append(" + 7-Day Plus Trial")
                     append(" added!")
                 }
                 _state.value = _state.value.copy(pendingMessage = msg)
